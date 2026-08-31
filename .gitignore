@@ -36,6 +36,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# application data (local file-based storage for submitted applications + CVs)
+/data/*
+!/data/.gitkeep
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
