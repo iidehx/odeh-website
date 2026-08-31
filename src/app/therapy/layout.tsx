@@ -39,6 +39,7 @@ export const metadata: Metadata = {
     url: "/therapy",
     siteName: "Odeh Therapy",
     type: "website",
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",

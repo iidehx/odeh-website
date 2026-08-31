@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     url: "/dental",
     siteName: "Odeh Dental",
     type: "website",
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
