@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms | Odeh Dental",
-  description: "Terms of use for the Odeh Dental recruitment platform.",
+  title: "Terms | Omar Odeh, CPA",
+  description: "Terms of use for the Omar Odeh, CPA website.",
   alternates: { canonical: "/dental/terms" },
   robots: { index: true, follow: true },
 };
@@ -14,22 +14,22 @@ export default function DentalTermsPage() {
         <h1 className="text-3xl font-semibold tracking-tight text-slate-900">
           Terms
         </h1>
-        <p className="mt-2 text-sm text-slate-500">Odeh Dental</p>
+        <p className="mt-2 text-sm text-slate-500">Omar Odeh, CPA</p>
 
         <div className="mt-8 space-y-6 text-sm leading-relaxed text-slate-600">
           <p>
-            By using this website and submitting an application, you agree
-            to the following terms.
+            By using this website and submitting the contact form, you
+            agree to the following terms.
           </p>
           <div>
             <h2 className="text-base font-semibold text-slate-900">
-              No Guarantee of Placement
+              No Advice Without Engagement
             </h2>
             <p className="mt-2">
-              Submitting an application through Odeh Dental does not
-              guarantee employment, an interview, or placement of any kind.
-              Our team reviews applications and reaches out where there is a
-              suitable opportunity.
+              Information on this website is general in nature and does not
+              constitute professional accounting, tax, or financial advice.
+              Specific guidance is provided only after we&apos;ve engaged with
+              you directly about your practice.
             </p>
           </div>
           <div>
@@ -37,8 +37,8 @@ export default function DentalTermsPage() {
               Accuracy of Information
             </h2>
             <p className="mt-2">
-              You agree that the information you submit, including your
-              CV, is accurate and up to date to the best of your knowledge.
+              You agree that the information you submit through this site
+              is accurate and up to date to the best of your knowledge.
             </p>
           </div>
           <div>

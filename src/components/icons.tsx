@@ -19,12 +19,64 @@ export function ToothIcon({ className }: IconProps) {
   );
 }
 
-export function UsersIcon({ className }: IconProps) {
+export function HeartHandIcon({ className }: IconProps) {
   return (
     <svg className={className} {...base} aria-hidden="true">
-      <path d="M17 20v-1.5a3.5 3.5 0 0 0-3.5-3.5h-5A3.5 3.5 0 0 0 5 18.5V20" />
-      <circle cx="9.5" cy="8" r="3.25" />
-      <path d="M15.5 6.2a3 3 0 0 1 0 5.9M19 20v-1.5a3 3 0 0 0-2.1-2.87" />
+      <path d="M12 8.5c-1-2-3.8-2.6-5.2-.9-1.4 1.7-1 4 .5 5.4L12 17l4.7-4c1.5-1.4 2-3.7.5-5.4-1.4-1.7-4.2-1.1-5.2.9Z" />
+    </svg>
+  );
+}
+
+export function CalculatorIcon({ className }: IconProps) {
+  return (
+    <svg className={className} {...base} aria-hidden="true">
+      <rect x="5" y="3" width="14" height="18" rx="2" />
+      <path d="M8 7h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 18h.01M12 18h.01M16 18h.01" />
+    </svg>
+  );
+}
+
+export function PieChartIcon({ className }: IconProps) {
+  return (
+    <svg className={className} {...base} aria-hidden="true">
+      <path d="M12 3.5a8.5 8.5 0 1 0 8.5 8.5H12V3.5Z" />
+      <path d="M15.5 3.9A8.5 8.5 0 0 1 20.1 8.5H15.5V3.9Z" />
+    </svg>
+  );
+}
+
+export function ActivityIcon({ className }: IconProps) {
+  return (
+    <svg className={className} {...base} aria-hidden="true">
+      <path d="M3 12h4l2.5-7 4 14 2.5-7H21" />
+    </svg>
+  );
+}
+
+export function TrendingUpIcon({ className }: IconProps) {
+  return (
+    <svg className={className} {...base} aria-hidden="true">
+      <path d="M3.5 16.5 9.5 10.5 13.5 14.5 20.5 7" />
+      <path d="M14.5 7h6v6" />
+    </svg>
+  );
+}
+
+export function ReceiptIcon({ className }: IconProps) {
+  return (
+    <svg className={className} {...base} aria-hidden="true">
+      <path d="M6 3.5h12v17l-2.5-1.5-2 1.5-2-1.5-2 1.5-2-1.5L6 20.5v-17Z" />
+      <path d="M8.5 8h7M8.5 11.5h7M8.5 15h4.5" />
+    </svg>
+  );
+}
+
+export function HandshakeIcon({ className }: IconProps) {
+  return (
+    <svg className={className} {...base} aria-hidden="true">
+      <path d="m3 12 4-4 4 3 3-3 3.5 3.5" />
+      <path d="M14 8.5 17.5 5 21 8.5l-4.5 4.5-2-1.5" />
+      <path d="M7 11 4 14l3 3 2.5-2" />
     </svg>
   );
 }
@@ -35,14 +87,6 @@ export function ClipboardCheckIcon({ className }: IconProps) {
       <rect x="6" y="4.5" width="12" height="16" rx="2" />
       <path d="M9.5 4.5V4a1.5 1.5 0 0 1 1.5-1.5h2A1.5 1.5 0 0 1 14.5 4v.5" />
       <path d="M9.5 13.5 11.25 15.25 14.75 11.25" />
-    </svg>
-  );
-}
-
-export function WrenchIcon({ className }: IconProps) {
-  return (
-    <svg className={className} {...base} aria-hidden="true">
-      <path d="M14.7 6.3a4 4 0 0 0-5.4 4.7L4 16.3V20h3.7l5.3-5.3a4 4 0 0 0 4.7-5.4l-2.6 2.6-2-2Z" />
     </svg>
   );
 }
@@ -61,15 +105,6 @@ export function FileTextIcon({ className }: IconProps) {
     <svg className={className} {...base} aria-hidden="true">
       <path d="M8 3.5h5.5L18 8v11.5a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-15a1 1 0 0 1 1-1Z" />
       <path d="M13.5 3.5V8H18M9.5 12.5h5M9.5 15.5h5" />
-    </svg>
-  );
-}
-
-export function LayersIcon({ className }: IconProps) {
-  return (
-    <svg className={className} {...base} aria-hidden="true">
-      <path d="m12 3 8 4.5-8 4.5-8-4.5L12 3Z" />
-      <path d="m4 12 8 4.5 8-4.5M4 16.5 12 21l8-4.5" />
     </svg>
   );
 }
@@ -94,14 +129,6 @@ export function XIcon({ className }: IconProps) {
   return (
     <svg className={className} {...base} aria-hidden="true">
       <path d="M6 6l12 12M18 6 6 18" />
-    </svg>
-  );
-}
-
-export function UploadIcon({ className }: IconProps) {
-  return (
-    <svg className={className} {...base} aria-hidden="true">
-      <path d="M12 15.5V4.5M8 8.3 12 4.3l4 4M5 16.5v2A2.5 2.5 0 0 0 7.5 21h9a2.5 2.5 0 0 0 2.5-2.5v-2" />
     </svg>
   );
 }
@@ -154,41 +181,6 @@ export function ChevronRightIcon({ className }: IconProps) {
   return (
     <svg className={className} {...base} aria-hidden="true">
       <path d="m9 6 6 6-6 6" />
-    </svg>
-  );
-}
-
-export function LeafIcon({ className }: IconProps) {
-  return (
-    <svg className={className} {...base} aria-hidden="true">
-      <path d="M5 19c0-8.5 5-14 14-14 0 9-5.5 14-14 14Z" />
-      <path d="M5 19c3-4 6-6.5 9-9" />
-    </svg>
-  );
-}
-
-export function HeartHandIcon({ className }: IconProps) {
-  return (
-    <svg className={className} {...base} aria-hidden="true">
-      <path d="M12 8.5c-1-2-3.8-2.6-5.2-.9-1.4 1.7-1 4 .5 5.4L12 17l4.7-4c1.5-1.4 2-3.7.5-5.4-1.4-1.7-4.2-1.1-5.2.9Z" />
-    </svg>
-  );
-}
-
-export function SparkleIcon({ className }: IconProps) {
-  return (
-    <svg className={className} {...base} aria-hidden="true">
-      <path d="M12 3.5c.5 3 2 4.5 5 5-3 .5-4.5 2-5 5-.5-3-2-4.5-5-5 3-.5 4.5-2 5-5Z" />
-      <path d="M18.5 15c.3 1.4 1 2.1 2.4 2.4-1.4.3-2.1 1-2.4 2.4-.3-1.4-1-2.1-2.4-2.4 1.4-.3 2.1-1 2.4-2.4Z" />
-    </svg>
-  );
-}
-
-export function EarIcon({ className }: IconProps) {
-  return (
-    <svg className={className} {...base} aria-hidden="true">
-      <path d="M8.5 20c-2-1.4-3.5-3.9-3.5-7A7 7 0 0 1 19 11.5c0 2.5-1.5 3.7-3 4.8-1 .8-1.5 1.5-1.5 2.7a2.5 2.5 0 0 1-5 0" />
-      <path d="M11.5 14.5a2 2 0 1 0 0-4" />
     </svg>
   );
 }
