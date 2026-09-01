@@ -26,16 +26,16 @@ export default function TherapyFooter() {
             <li className="flex items-center gap-2">
               <MailIcon className="h-4 w-4 text-stone-400" />
               <a
-                href="mailto:careers@odehtherapy.com"
+                href="mailto:Odeh90@gmail.com"
                 className="hover:text-stone-900"
               >
-                careers@odehtherapy.com
+                Odeh90@gmail.com
               </a>
             </li>
             <li className="flex items-center gap-2">
               <PhoneIcon className="h-4 w-4 text-stone-400" />
-              <a href="tel:+10000000000" className="hover:text-stone-900">
-                +1 (000) 000-0000
+              <a href="tel:+17142049779" className="hover:text-stone-900">
+                714-204-9779
               </a>
             </li>
           </ul>

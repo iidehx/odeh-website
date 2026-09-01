@@ -26,16 +26,16 @@ export default function DentalFooter() {
             <li className="flex items-center gap-2">
               <MailIcon className="h-4 w-4 text-slate-400" />
               <a
-                href="mailto:careers@odehdental.com"
+                href="mailto:Odeh90@gmail.com"
                 className="hover:text-slate-900"
               >
-                careers@odehdental.com
+                Odeh90@gmail.com
               </a>
             </li>
             <li className="flex items-center gap-2">
               <PhoneIcon className="h-4 w-4 text-slate-400" />
-              <a href="tel:+10000000000" className="hover:text-slate-900">
-                +1 (000) 000-0000
+              <a href="tel:+17142049779" className="hover:text-slate-900">
+                714-204-9779
               </a>
             </li>
           </ul>

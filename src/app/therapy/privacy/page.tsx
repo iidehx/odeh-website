@@ -60,10 +60,10 @@ export default function TherapyPrivacyPage() {
               If you have questions about this policy or would like your
               information removed, contact us at{" "}
               <a
-                href="mailto:careers@odehtherapy.com"
+                href="mailto:Odeh90@gmail.com"
                 className="text-orange-800 hover:underline"
               >
-                careers@odehtherapy.com
+                Odeh90@gmail.com
               </a>
               .
             </p>
