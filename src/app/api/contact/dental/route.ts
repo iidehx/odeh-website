@@ -3,20 +3,11 @@ import {
   ValidationError,
   checkHoneypotAndTiming,
   checkRateLimit,
-  saveApplicationRecord,
-  validateAndStoreCv,
-  validateCommonFields,
-} from "@/lib/applications";
+  saveInquiryRecord,
+  validateInquiryFields,
+} from "@/lib/inquiries";
 
 export const runtime = "nodejs";
-
-const DENTAL_PROFESSIONS = new Set([
-  "Dentist",
-  "Dental Assistant",
-  "Dental Hygienist",
-  "Dental Technician",
-  "Other",
-]);
 
 export async function POST(request: NextRequest) {
   const ip =
@@ -28,20 +19,9 @@ export async function POST(request: NextRequest) {
     const formData = await request.formData();
     checkHoneypotAndTiming(formData);
 
-    const fields = validateCommonFields(formData);
-    if (!DENTAL_PROFESSIONS.has(fields.profession)) {
-      throw new ValidationError("profession", "Please select a valid profession.");
-    }
+    const fields = validateInquiryFields(formData);
 
-    const { cvFileName, cvStoredPath } = await validateAndStoreCv(formData, "dental");
-
-    const record = await saveApplicationRecord({
-      category: "dental",
-      ...fields,
-      cvFileName,
-      cvStoredPath,
-      ip,
-    });
+    const record = await saveInquiryRecord({ category: "dental", ...fields, ip });
 
     return NextResponse.json({ success: true, id: record.id }, { status: 201 });
   } catch (error) {
@@ -51,7 +31,7 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
-    console.error("Dental application submission failed", error);
+    console.error("Dental contact submission failed", error);
     return NextResponse.json(
       { success: false, message: "Something went wrong. Please try again." },
       { status: 500 }

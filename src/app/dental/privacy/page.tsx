@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Odeh Dental",
-  description: "How Odeh Dental collects, uses, and protects applicant information.",
+  title: "Privacy Policy | Omar Odeh, CPA",
+  description: "How Omar Odeh, CPA collects, uses, and protects your information.",
   alternates: { canonical: "/dental/privacy" },
   robots: { index: true, follow: true },
 };
@@ -14,23 +14,22 @@ export default function DentalPrivacyPage() {
         <h1 className="text-3xl font-semibold tracking-tight text-slate-900">
           Privacy Policy
         </h1>
-        <p className="mt-2 text-sm text-slate-500">Odeh Dental</p>
+        <p className="mt-2 text-sm text-slate-500">Omar Odeh, CPA</p>
 
         <div className="mt-8 space-y-6 text-sm leading-relaxed text-slate-600">
           <p>
-            This Privacy Policy explains how Odeh Dental (&quot;we&quot;,
+            This Privacy Policy explains how Omar Odeh, CPA (&quot;we&quot;,
             &quot;us&quot;) collects, uses, and protects the information you
-            provide when you submit an application through this website.
+            provide when you contact us through this website.
           </p>
           <div>
             <h2 className="text-base font-semibold text-slate-900">
               Information We Collect
             </h2>
             <p className="mt-2">
-              When you submit an application, we collect your name, email
-              address, phone number, country, profession, years of
-              experience, preferred location, any message you provide, and
-              your uploaded CV.
+              When you submit the contact form, we collect your name,
+              practice name (if provided), email address, phone number, the
+              service you&apos;re interested in, and your message.
             </p>
           </div>
           <div>
@@ -38,9 +37,9 @@ export default function DentalPrivacyPage() {
               How We Use Your Information
             </h2>
             <p className="mt-2">
-              We use the information you provide to review your application
-              and, where there is a suitable opportunity, to contact you.
-              We do not sell your personal information.
+              We use the information you provide to respond to your
+              inquiry and follow up about our services. We do not sell your
+              personal information.
             </p>
           </div>
           <div>
@@ -48,8 +47,8 @@ export default function DentalPrivacyPage() {
               Data Storage
             </h2>
             <p className="mt-2">
-              Application information, including uploaded CVs, is stored
-              securely and is only accessible to our internal team.
+              Information submitted through this website is stored securely
+              and is only accessible to our internal team.
             </p>
           </div>
           <div>
@@ -60,10 +59,10 @@ export default function DentalPrivacyPage() {
               If you have questions about this policy or would like your
               information removed, contact us at{" "}
               <a
-                href="mailto:careers@odehdental.com"
-                className="text-teal-700 hover:underline"
+                href="mailto:Odeh90@gmail.com"
+                className="text-amber-700 hover:underline"
               >
-                careers@odehdental.com
+                Odeh90@gmail.com
               </a>
               .
             </p>

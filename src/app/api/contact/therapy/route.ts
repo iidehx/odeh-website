@@ -3,19 +3,11 @@ import {
   ValidationError,
   checkHoneypotAndTiming,
   checkRateLimit,
-  saveApplicationRecord,
-  validateAndStoreCv,
-  validateCommonFields,
-} from "@/lib/applications";
+  saveInquiryRecord,
+  validateInquiryFields,
+} from "@/lib/inquiries";
 
 export const runtime = "nodejs";
-
-const THERAPY_PROFESSIONS = new Set([
-  "Physical Therapist",
-  "Occupational Therapist",
-  "Speech Therapist",
-  "Other",
-]);
 
 export async function POST(request: NextRequest) {
   const ip =
@@ -27,20 +19,9 @@ export async function POST(request: NextRequest) {
     const formData = await request.formData();
     checkHoneypotAndTiming(formData);
 
-    const fields = validateCommonFields(formData);
-    if (!THERAPY_PROFESSIONS.has(fields.profession)) {
-      throw new ValidationError("profession", "Please select a valid profession.");
-    }
+    const fields = validateInquiryFields(formData);
 
-    const { cvFileName, cvStoredPath } = await validateAndStoreCv(formData, "therapy");
-
-    const record = await saveApplicationRecord({
-      category: "therapy",
-      ...fields,
-      cvFileName,
-      cvStoredPath,
-      ip,
-    });
+    const record = await saveInquiryRecord({ category: "therapy", ...fields, ip });
 
     return NextResponse.json({ success: true, id: record.id }, { status: 201 });
   } catch (error) {
@@ -50,7 +31,7 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
-    console.error("Therapy application submission failed", error);
+    console.error("Therapy contact submission failed", error);
     return NextResponse.json(
       { success: false, message: "Something went wrong. Please try again." },
       { status: 500 }

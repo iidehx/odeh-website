@@ -36,7 +36,7 @@ yarn-error.log*
 # vercel
 .vercel
 
-# application data (local file-based storage for submitted applications + CVs)
+# application data (local file-based storage for submitted contact inquiries)
 /data/*
 !/data/.gitkeep
 

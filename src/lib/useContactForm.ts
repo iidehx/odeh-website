@@ -4,14 +4,11 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 
 export type SubmitStatus = "idle" | "submitting" | "success" | "error";
 
-interface UseApplyFormOptions {
+interface UseContactFormOptions {
   category: "dental" | "therapy";
 }
 
-const ALLOWED_CV_EXTENSIONS = [".pdf", ".doc", ".docx"];
-const MAX_CV_SIZE_BYTES = 5 * 1024 * 1024;
-
-export function useApplyForm({ category }: UseApplyFormOptions) {
+export function useContactForm({ category }: UseContactFormOptions) {
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [serverMessage, setServerMessage] = useState<string | null>(null);
@@ -51,44 +48,14 @@ export function useApplyForm({ category }: UseApplyFormOptions) {
       newErrors.phone = "Please enter a valid phone number.";
     }
 
-    const country = String(formData.get("country") || "").trim();
-    if (country.length < 2) {
-      newErrors.country = "Please enter your country.";
+    const service = String(formData.get("service") || "").trim();
+    if (!service) {
+      newErrors.service = "Please select a service.";
     }
 
-    const profession = String(formData.get("profession") || "").trim();
-    if (!profession) {
-      newErrors.profession = "Please select a profession.";
-    }
-
-    const experienceRaw = formData.get("experienceYears");
-    const experienceNum = Number(experienceRaw);
-    if (
-      experienceRaw === null ||
-      String(experienceRaw).trim() === "" ||
-      Number.isNaN(experienceNum) ||
-      experienceNum < 0 ||
-      experienceNum > 60
-    ) {
-      newErrors.experienceYears = "Please enter a valid number of years (0-60).";
-    }
-
-    const location = String(formData.get("preferredLocation") || "").trim();
-    if (location.length < 2) {
-      newErrors.preferredLocation = "Please enter your preferred location.";
-    }
-
-    const cv = formData.get("cv");
-    if (!(cv instanceof File) || cv.size === 0) {
-      newErrors.cv = "Please attach your CV.";
-    } else {
-      const name = cv.name.toLowerCase();
-      const validExt = ALLOWED_CV_EXTENSIONS.some((ext) => name.endsWith(ext));
-      if (!validExt) {
-        newErrors.cv = "CV must be a PDF, DOC, or DOCX file.";
-      } else if (cv.size > MAX_CV_SIZE_BYTES) {
-        newErrors.cv = "CV file must be smaller than 5MB.";
-      }
+    const message = String(formData.get("message") || "").trim();
+    if (message.length < 10) {
+      newErrors.message = "Please tell us a bit about what you need (at least 10 characters).";
     }
 
     if (Object.keys(newErrors).length > 0) {
@@ -103,7 +70,7 @@ export function useApplyForm({ category }: UseApplyFormOptions) {
     setServerMessage(null);
 
     try {
-      const response = await fetch(`/api/apply/${category}`, {
+      const response = await fetch(`/api/contact/${category}`, {
         method: "POST",
         body: formData,
       });
