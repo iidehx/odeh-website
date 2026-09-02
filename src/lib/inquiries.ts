@@ -2,7 +2,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import crypto from "crypto";
 
-export type Category = "dental" | "therapy";
+export type Category = "dental" | "therapy" | "real-estate";
 
 export interface InquiryRecord {
   id: string;
@@ -38,7 +38,7 @@ const SERVICES = new Set([
   "Financial Consulting",
   "Cash Flow Management",
   "Tax Preparation",
-  "Practice Management",
+  "Business Management",
   "Other",
 ]);
 

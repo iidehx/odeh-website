@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import HeroGraphic from "@/components/HeroGraphic";
 import Services, { type ServiceItem } from "@/components/Services";
 import WhyUs, { type WhyUsPoint } from "@/components/WhyUs";
 import CtaSection from "@/components/CtaSection";
@@ -48,7 +49,7 @@ const services: ServiceItem[] = [
   },
   {
     icon: ActivityIcon,
-    title: "Practice Management",
+    title: "Business Management",
     description:
       "Chair utilization, hygiene production, overhead ratios, and other practice-level metrics tracked and reported clearly.",
   },
@@ -85,11 +86,14 @@ export default function DentalPage() {
   return (
     <>
       <Hero
-        base="/dental"
-        variant="dental"
         label="Accounting for Dental Practices"
         headline="Financial Clarity for Your Dental Practice."
-        description="Omar Odeh, CPA helps dental practices stay organized and in control of their finances with bookkeeping, budgeting, cash flow management, and practice management built around how a dental office actually runs."
+        description="Omar Odeh, CPA helps dental practices stay organized and in control of their finances with bookkeeping, budgeting, cash flow management, and business management built around how a dental office actually runs."
+        primaryCtaHref="/dental/contact"
+        primaryCtaLabel="Contact Us"
+        secondaryCtaHref="#services"
+        secondaryCtaLabel="Explore Services"
+        graphic={<HeroGraphic variant="dental" />}
       />
       <Services
         eyebrow="Services"
@@ -104,9 +108,9 @@ export default function DentalPage() {
         points={points}
       />
       <CtaSection
-        base="/dental"
         heading="Ready to Get Your Practice's Books in Order?"
         description="Reach out and tell us about your practice — we'll follow up to see how we can help."
+        ctaHref="/dental/contact"
       />
     </>
   );

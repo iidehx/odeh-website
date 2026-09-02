@@ -2,11 +2,13 @@ import Link from "next/link";
 import { CalculatorIcon, MailIcon, PhoneIcon } from "@/components/icons";
 
 export default function Footer({
-  base,
   description,
+  privacyHref,
+  termsHref,
 }: {
-  base: "/dental" | "/therapy";
   description: string;
+  privacyHref: string;
+  termsHref: string;
 }) {
   return (
     <footer className="border-t border-slate-200 bg-slate-50">
@@ -43,12 +45,12 @@ export default function Footer({
           <h2 className="text-sm font-semibold text-slate-900">Legal</h2>
           <ul className="mt-4 space-y-3 text-sm text-slate-600">
             <li>
-              <Link href={`${base}/privacy`} className="hover:text-slate-900">
+              <Link href={privacyHref} className="hover:text-slate-900">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link href={`${base}/terms`} className="hover:text-slate-900">
+              <Link href={termsHref} className="hover:text-slate-900">
                 Terms
               </Link>
             </li>

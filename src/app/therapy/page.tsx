@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import HeroGraphic from "@/components/HeroGraphic";
 import Services, { type ServiceItem } from "@/components/Services";
 import WhyUs, { type WhyUsPoint } from "@/components/WhyUs";
 import CtaSection from "@/components/CtaSection";
@@ -48,7 +49,7 @@ const services: ServiceItem[] = [
   },
   {
     icon: ActivityIcon,
-    title: "Practice Management",
+    title: "Business Management",
     description:
       "Session utilization, no-show rates, provider productivity, and other practice-level metrics tracked and reported clearly.",
   },
@@ -85,11 +86,14 @@ export default function TherapyPage() {
   return (
     <>
       <Hero
-        base="/therapy"
-        variant="therapy"
         label="Accounting for Therapy Practices"
         headline="Financial Clarity for Your Therapy Practice."
-        description="Omar Odeh, CPA helps physical, occupational, and speech therapy practices stay organized and in control of their finances with bookkeeping, budgeting, cash flow management, and practice management built around how a therapy practice actually runs."
+        description="Omar Odeh, CPA helps physical, occupational, and speech therapy practices stay organized and in control of their finances with bookkeeping, budgeting, cash flow management, and business management built around how a therapy practice actually runs."
+        primaryCtaHref="/therapy/contact"
+        primaryCtaLabel="Contact Us"
+        secondaryCtaHref="#services"
+        secondaryCtaLabel="Explore Services"
+        graphic={<HeroGraphic variant="therapy" />}
       />
       <Services
         eyebrow="Services"
@@ -104,9 +108,9 @@ export default function TherapyPage() {
         points={points}
       />
       <CtaSection
-        base="/therapy"
         heading="Ready to Get Your Practice's Books in Order?"
         description="Reach out and tell us about your practice — we'll follow up to see how we can help."
+        ctaHref="/therapy/contact"
       />
     </>
   );

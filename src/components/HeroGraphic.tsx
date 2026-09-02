@@ -11,15 +11,31 @@ const motifs = {
       fill="none"
     />
   ),
+  realEstate: (
+    <path
+      d="M50 5 5 42h13v53h64V42h13L50 5Z M40 95V65h20v30"
+      fill="none"
+    />
+  ),
+  general: (
+    <path
+      d="M50 0c6 22 16 32 38 38-22 6-32 16-38 38-6-22-16-32-38-38 22-6 32-16 38-38Z"
+      fill="none"
+    />
+  ),
 };
 
-export default function HeroGraphic({ variant }: { variant: "dental" | "therapy" }) {
+export default function HeroGraphic({
+  variant,
+}: {
+  variant: "dental" | "therapy" | "realEstate" | "general";
+}) {
   return (
     <svg
       viewBox="0 0 480 480"
       className="h-full w-full"
       role="img"
-      aria-label="Abstract illustration representing organized practice finances and growth"
+      aria-label="Abstract illustration representing organized business finances and growth"
     >
       <defs>
         <pattern id="finance-grid" width="24" height="24" patternUnits="userSpaceOnUse">

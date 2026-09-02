@@ -5,7 +5,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 export type SubmitStatus = "idle" | "submitting" | "success" | "error";
 
 interface UseContactFormOptions {
-  category: "dental" | "therapy";
+  category: "dental" | "therapy" | "real-estate";
 }
 
 export function useContactForm({ category }: UseContactFormOptions) {

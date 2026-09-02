@@ -1,18 +1,24 @@
 import Link from "next/link";
-import HeroGraphic from "./HeroGraphic";
+import type { ReactNode } from "react";
 
 export default function Hero({
-  base,
-  variant,
   label,
   headline,
   description,
+  primaryCtaHref,
+  primaryCtaLabel,
+  secondaryCtaHref,
+  secondaryCtaLabel,
+  graphic,
 }: {
-  base: "/dental" | "/therapy";
-  variant: "dental" | "therapy";
   label: string;
   headline: string;
   description: string;
+  primaryCtaHref: string;
+  primaryCtaLabel: string;
+  secondaryCtaHref: string;
+  secondaryCtaLabel: string;
+  graphic: ReactNode;
 }) {
   return (
     <section className="relative overflow-hidden bg-white">
@@ -29,23 +35,21 @@ export default function Hero({
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
-              href={`${base}/contact`}
+              href={primaryCtaHref}
               className="rounded-md bg-amber-700 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-amber-800"
             >
-              Contact Us
+              {primaryCtaLabel}
             </Link>
             <Link
-              href="#services"
+              href={secondaryCtaHref}
               className="rounded-md border border-slate-300 px-7 py-3.5 text-sm font-semibold text-slate-900 transition-colors hover:bg-slate-50"
             >
-              Explore Services
+              {secondaryCtaLabel}
             </Link>
           </div>
         </div>
 
-        <div className="mx-auto aspect-square w-full max-w-md">
-          <HeroGraphic variant={variant} />
-        </div>
+        <div className="mx-auto aspect-square w-full max-w-md">{graphic}</div>
       </div>
     </section>
   );

@@ -1,13 +1,15 @@
 import Link from "next/link";
 
 export default function CtaSection({
-  base,
   heading,
   description,
+  ctaHref,
+  ctaLabel = "Contact Us",
 }: {
-  base: "/dental" | "/therapy";
   heading: string;
   description: string;
+  ctaHref: string;
+  ctaLabel?: string;
 }) {
   return (
     <section className="bg-slate-900 py-20">
@@ -18,10 +20,10 @@ export default function CtaSection({
         <p className="mt-4 text-base leading-relaxed text-slate-300">{description}</p>
         <div className="mt-9">
           <Link
-            href={`${base}/contact`}
+            href={ctaHref}
             className="inline-block rounded-md bg-amber-600 px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-amber-500"
           >
-            Contact Us
+            {ctaLabel}
           </Link>
         </div>
       </div>

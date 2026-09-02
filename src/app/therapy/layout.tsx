@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Therapy Practice Accounting | Omar Odeh, CPA",
   description:
-    "Omar Odeh, CPA specializes in bookkeeping, budgeting, tax preparation, cash flow, and practice management for physical, occupational, and speech therapy practices. Contact us today.",
+    "Omar Odeh, CPA specializes in bookkeeping, budgeting, tax preparation, cash flow, and business management for physical, occupational, and speech therapy practices. Contact us today.",
   keywords: [
     "therapy practice accountant",
     "physical therapy CPA",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Therapy Practice Accounting | Omar Odeh, CPA",
     description:
-      "Bookkeeping, budgeting, financial consulting, cash flow, tax preparation, and practice management built for therapy practices.",
+      "Bookkeeping, budgeting, financial consulting, cash flow, tax preparation, and business management built for therapy practices.",
     url: "/therapy",
     siteName: "Omar Odeh, CPA",
     type: "website",
@@ -30,10 +30,16 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Therapy Practice Accounting | Omar Odeh, CPA",
     description:
-      "Bookkeeping, budgeting, financial consulting, cash flow, tax preparation, and practice management built for therapy practices.",
+      "Bookkeeping, budgeting, financial consulting, cash flow, tax preparation, and business management built for therapy practices.",
   },
   robots: { index: true, follow: true },
 };
+
+const links = [
+  { href: "/therapy", label: "Home" },
+  { href: "/therapy#services", label: "Services" },
+  { href: "/therapy#about", label: "About" },
+];
 
 export default function TherapyLayout({ children }: { children: React.ReactNode }) {
   const jsonLd = {
@@ -41,7 +47,7 @@ export default function TherapyLayout({ children }: { children: React.ReactNode 
     "@type": "AccountingService",
     name: "Omar Odeh, CPA — Therapy Practice Accounting",
     description:
-      "Bookkeeping, budgeting, financial consulting, cash flow management, tax preparation, and practice management for therapy practices.",
+      "Bookkeeping, budgeting, financial consulting, cash flow management, tax preparation, and business management for therapy practices.",
     email: "Odeh90@gmail.com",
     telephone: "+17142049779",
     url: "https://www.omarodehcpa.com/therapy",
@@ -54,11 +60,12 @@ export default function TherapyLayout({ children }: { children: React.ReactNode 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Nav base="/therapy" />
+      <Nav homeHref="/therapy" links={links} ctaHref="/therapy/contact" />
       <main className="flex-1">{children}</main>
       <Footer
-        base="/therapy"
-        description="Specialized accounting for therapy practices — bookkeeping, budgeting, financial consulting, cash flow management, tax preparation, and practice management."
+        description="Specialized accounting for therapy practices — bookkeeping, budgeting, financial consulting, cash flow management, tax preparation, and business management."
+        privacyHref="/therapy/privacy"
+        termsHref="/therapy/terms"
       />
     </>
   );
