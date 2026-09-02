@@ -27,6 +27,15 @@ export function HeartHandIcon({ className }: IconProps) {
   );
 }
 
+export function HomeIcon({ className }: IconProps) {
+  return (
+    <svg className={className} {...base} aria-hidden="true">
+      <path d="M4 11.5 12 4l8 7.5" />
+      <path d="M6 10v9.5a1 1 0 0 0 1 1h3.5v-6h3v6H17a1 1 0 0 0 1-1V10" />
+    </svg>
+  );
+}
+
 export function CalculatorIcon({ className }: IconProps) {
   return (
     <svg className={className} {...base} aria-hidden="true">

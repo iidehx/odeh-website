@@ -9,21 +9,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://www.omarodehcpa.com"),
-  title: "Omar Odeh, CPA | Dental & Therapy Practice Accounting",
-  description:
-    "Omar Odeh, CPA specializes in accounting for dental and therapy practices — bookkeeping, budgeting, financial consulting, cash flow, tax preparation, and practice management.",
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title: "Omar Odeh, CPA | Dental & Therapy Practice Accounting",
-    description:
-      "Specialized accounting for dental and therapy practices.",
-    url: "/",
-    siteName: "Omar Odeh, CPA",
-    type: "website",
-    locale: "en_US",
-  },
+  title: "Omar Odeh, CPA",
+  description: "Omar Odeh, CPA — accounting for growing businesses.",
   robots: { index: true, follow: true },
 };
 

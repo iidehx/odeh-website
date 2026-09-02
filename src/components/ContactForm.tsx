@@ -10,7 +10,7 @@ const SERVICES = [
   "Financial Consulting",
   "Cash Flow Management",
   "Tax Preparation",
-  "Practice Management",
+  "Business Management",
   "Other",
 ];
 
@@ -48,7 +48,7 @@ export default function ContactForm({
   category,
   practiceLabel,
 }: {
-  category: "dental" | "therapy";
+  category: "dental" | "therapy" | "real-estate";
   practiceLabel: string;
 }) {
   const { status, errors, serverMessage, handleSubmit } = useContactForm({ category });
