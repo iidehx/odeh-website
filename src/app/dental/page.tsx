@@ -21,19 +21,19 @@ const services: ServiceItem[] = [
     icon: CalculatorIcon,
     title: "Bookkeeping",
     description:
-      "Day-to-day tracking of production, collections, and expenses across your practice, so your books always match your chairside reality.",
+      "Day-to-day tracking of production, collections, and expenses across your clinic, so your books always match your chairside reality.",
   },
   {
     icon: PieChartIcon,
     title: "Budgeting",
     description:
-      "Budgets built around your practice's real overhead — supplies, lab fees, staff, and equipment — not generic templates.",
+      "Budgets built around your clinic's real overhead — supplies, lab fees, staff, and equipment — not generic templates.",
   },
   {
     icon: HandshakeIcon,
     title: "Financial Consulting",
     description:
-      "Guidance on associate buy-ins, equipment purchases, and growth decisions, from someone who understands dental practice economics.",
+      "Guidance on associate buy-ins, equipment purchases, and growth decisions, from someone who understands dental clinic economics.",
   },
   {
     icon: TrendingUpIcon,
@@ -51,7 +51,7 @@ const services: ServiceItem[] = [
     icon: ActivityIcon,
     title: "Business Management",
     description:
-      "Chair utilization, hygiene production, overhead ratios, and other practice-level metrics tracked and reported clearly.",
+      "Chair utilization, hygiene production, overhead ratios, and other clinic-level metrics tracked and reported clearly.",
   },
 ];
 
@@ -60,25 +60,25 @@ const points: WhyUsPoint[] = [
     icon: FileTextIcon,
     title: "Personalized Service",
     description:
-      "One-on-one attention tailored to your practice's structure and goals, not a one-size-fits-all package.",
+      "One-on-one attention tailored to your clinic's structure and goals, not a one-size-fits-all package.",
   },
   {
     icon: ClipboardCheckIcon,
     title: "Accurate & Timely",
     description:
-      "Reliable, up-to-date financials so you always know exactly where your practice stands.",
+      "Reliable, up-to-date financials so you always know exactly where your clinic stands.",
   },
   {
     icon: ShieldCheckIcon,
     title: "Confidential & Secure",
     description:
-      "Your practice's financial information is handled with care, discretion, and professional standards.",
+      "Your clinic's financial information is handled with care, discretion, and professional standards.",
   },
   {
     icon: MessageCircleIcon,
     title: "Clear Communication",
     description:
-      "Plain-language guidance from someone who understands dental practice economics, not confusing jargon.",
+      "Plain-language guidance from someone who understands dental clinic economics, not confusing jargon.",
   },
 ];
 
@@ -86,9 +86,9 @@ export default function DentalPage() {
   return (
     <>
       <Hero
-        label="Accounting for Dental Practices"
-        headline="Financial Clarity for Your Dental Practice."
-        description="Omar Odeh, CPA helps dental practices stay organized and in control of their finances with bookkeeping, budgeting, cash flow management, and business management built around how a dental office actually runs."
+        label="Accounting for Dental Clinics"
+        headline="Financial Clarity for Your Dental Clinic."
+        description="Omar Odeh, CPA helps dental clinics stay organized and in control of their finances with bookkeeping, budgeting, cash flow management, and business management built around how a dental office actually runs."
         primaryCtaHref="/dental/contact"
         primaryCtaLabel="Contact Us"
         secondaryCtaHref="#services"
@@ -97,19 +97,19 @@ export default function DentalPage() {
       />
       <Services
         eyebrow="Services"
-        heading="Everything Your Practice's Books Need"
-        description="From day-to-day bookkeeping to practice-level metrics, we handle the numbers so you can focus on patients."
+        heading="Everything Your Clinic's Books Need"
+        description="From day-to-day bookkeeping to clinic-level metrics, we handle the numbers so you can focus on patients."
         services={services}
       />
       <WhyUs
         eyebrow="About Omar Odeh, CPA"
-        heading="A Partner Who Understands Dental Practices"
-        description="Dental practices deserve more than a once-a-year tax appointment. Omar Odeh, CPA works with you throughout the year so your books stay accurate and your decisions stay informed."
+        heading="A Partner Who Understands Dental Clinics"
+        description="Dental clinics deserve more than a once-a-year tax appointment. Omar Odeh, CPA works with you throughout the year so your books stay accurate and your decisions stay informed."
         points={points}
       />
       <CtaSection
-        heading="Ready to Get Your Practice's Books in Order?"
-        description="Reach out and tell us about your practice — we'll follow up to see how we can help."
+        heading="Ready to Get Your Clinic's Books in Order?"
+        description="Reach out and tell us about your clinic — we'll follow up to see how we can help."
         ctaHref="/dental/contact"
       />
     </>
