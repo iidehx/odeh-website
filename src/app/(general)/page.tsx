@@ -87,8 +87,8 @@ const processSteps: ProcessStep[] = [
 const industries: IndustryItem[] = [
   {
     icon: ToothIcon,
-    title: "Dental Practices",
-    description: "Accounting built around how a dental practice actually runs.",
+    title: "Dental Clinics",
+    description: "Accounting built around how a dental clinic actually runs.",
     href: "/dental",
   },
   {
@@ -137,7 +137,7 @@ export default function HomePage() {
       <Hero
         label="Accounting for Growing Businesses"
         headline="Financial Clarity, Built Around Your Business."
-        description="Omar Odeh, CPA provides bookkeeping, budgeting, financial consulting, cash flow management, tax preparation, and business management for growing businesses, with specialized experience in dental, therapy, and real estate."
+        description="Omar Odeh, CPA provides bookkeeping, budgeting, financial consulting, cash flow management, tax preparation, and business management for growing businesses, with specialized experience in dental clinics, therapy practices, and real estate businesses."
         primaryCtaHref="#industries"
         primaryCtaLabel="Get Started"
         secondaryCtaHref="#services"

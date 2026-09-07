@@ -29,7 +29,7 @@ export default function DentalTermsPage() {
               Information on this website is general in nature and does not
               constitute professional accounting, tax, or financial advice.
               Specific guidance is provided only after we&apos;ve engaged with
-              you directly about your practice.
+              you directly about your clinic.
             </p>
           </div>
           <div>

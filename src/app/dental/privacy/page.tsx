@@ -28,7 +28,7 @@ export default function DentalPrivacyPage() {
             </h2>
             <p className="mt-2">
               When you submit the contact form, we collect your name,
-              practice name (if provided), email address, phone number, the
+              clinic name (if provided), email address, phone number, the
               service you&apos;re interested in, and your message.
             </p>
           </div>
