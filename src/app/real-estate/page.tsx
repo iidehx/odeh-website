@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import HeroGraphic from "@/components/HeroGraphic";
 import Services, { type ServiceItem } from "@/components/Services";
+import Process, { type ProcessStep } from "@/components/Process";
 import WhyUs, { type WhyUsPoint } from "@/components/WhyUs";
 import CtaSection from "@/components/CtaSection";
 import {
@@ -55,6 +56,33 @@ const services: ServiceItem[] = [
   },
 ];
 
+const processSteps: ProcessStep[] = [
+  {
+    icon: MessageCircleIcon,
+    title: "We Learn Your Business",
+    description:
+      "We start by understanding how you actually earn — your commission structure, marketing spend, and how you're currently tracking deals and expenses. No accounting background needed on your end.",
+  },
+  {
+    icon: FileTextIcon,
+    title: "You Send Us the Basics",
+    description:
+      "After each closing (or monthly, whichever fits how you work), you share your commission statements and expenses. That's the extent of what we need from you.",
+  },
+  {
+    icon: CalculatorIcon,
+    title: "We Turn It Into Plain Answers",
+    description:
+      "Instead of confusing spreadsheets, you get a simple summary: what you earned, what you spent, and what's actually left over — even through the slow months.",
+  },
+  {
+    icon: ReceiptIcon,
+    title: "We Handle Tax Season",
+    description:
+      "Before filing, we review everything for deductions specific to real estate professionals — mileage, marketing, 1099 income — so nothing's missed.",
+  },
+];
+
 const points: WhyUsPoint[] = [
   {
     icon: FileTextIcon,
@@ -100,6 +128,12 @@ export default function RealEstatePage() {
         heading="Everything Your Business's Books Need"
         description="From day-to-day bookkeeping to deal-level metrics, we handle the numbers so you can focus on closing."
         services={services}
+      />
+      <Process
+        eyebrow="How It Works"
+        heading="Accounting, Explained in Plain English"
+        description="You don't need to understand accounting — you just need to close deals. Here's exactly what working with us looks like."
+        steps={processSteps}
       />
       <WhyUs
         eyebrow="About Omar Odeh, CPA"

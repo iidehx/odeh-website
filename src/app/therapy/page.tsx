@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import HeroGraphic from "@/components/HeroGraphic";
 import Services, { type ServiceItem } from "@/components/Services";
+import Process, { type ProcessStep } from "@/components/Process";
 import WhyUs, { type WhyUsPoint } from "@/components/WhyUs";
 import CtaSection from "@/components/CtaSection";
 import {
@@ -55,6 +56,33 @@ const services: ServiceItem[] = [
   },
 ];
 
+const processSteps: ProcessStep[] = [
+  {
+    icon: MessageCircleIcon,
+    title: "We Learn Your Practice",
+    description:
+      "We start by understanding how your practice actually runs — session volume, how insurance billing works for you, and how you're currently tracking income and expenses. No accounting background needed on your end.",
+  },
+  {
+    icon: FileTextIcon,
+    title: "You Send Us the Basics",
+    description:
+      "Each month, you share your billing and payment records, or we help you start organizing them if you're not already. That's the extent of what we need from you.",
+  },
+  {
+    icon: CalculatorIcon,
+    title: "We Turn It Into Plain Answers",
+    description:
+      "Instead of confusing spreadsheets, you get a simple summary: what came in, what went out, and what's actually left over.",
+  },
+  {
+    icon: ReceiptIcon,
+    title: "We Handle Tax Season",
+    description:
+      "Before filing, we review everything for deductions specific to therapy practices — continuing education, equipment, space — so nothing's missed.",
+  },
+];
+
 const points: WhyUsPoint[] = [
   {
     icon: FileTextIcon,
@@ -100,6 +128,12 @@ export default function TherapyPage() {
         heading="Everything Your Practice's Books Need"
         description="From day-to-day bookkeeping to practice-level metrics, we handle the numbers so you can focus on patients."
         services={services}
+      />
+      <Process
+        eyebrow="How It Works"
+        heading="Accounting, Explained in Plain English"
+        description="You don't need to understand accounting — you just need to run your practice. Here's exactly what working with us looks like."
+        steps={processSteps}
       />
       <WhyUs
         eyebrow="About Omar Odeh, CPA"
