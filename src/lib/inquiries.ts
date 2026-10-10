@@ -38,6 +38,8 @@ const SERVICES = new Set([
   "Financial Consulting",
   "Cash Flow Management",
   "Tax Preparation",
+  "Payroll",
+  "Fractional CFO",
   "Business Management",
   "Other",
 ]);

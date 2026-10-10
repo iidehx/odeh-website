@@ -3,11 +3,13 @@ import HeroGraphic from "@/components/HeroGraphic";
 import Services, { type ServiceItem } from "@/components/Services";
 import Process, { type ProcessStep } from "@/components/Process";
 import WhyUs, { type WhyUsPoint } from "@/components/WhyUs";
+import Faq, { type FaqItem } from "@/components/Faq";
 import CtaSection from "@/components/CtaSection";
 import {
   ActivityIcon,
   CalculatorIcon,
   ClipboardCheckIcon,
+  CompassIcon,
   FileTextIcon,
   HandshakeIcon,
   MessageCircleIcon,
@@ -15,6 +17,7 @@ import {
   ReceiptIcon,
   ShieldCheckIcon,
   TrendingUpIcon,
+  UsersIcon,
 } from "@/components/icons";
 
 const services: ServiceItem[] = [
@@ -22,37 +25,94 @@ const services: ServiceItem[] = [
     icon: CalculatorIcon,
     title: "Bookkeeping",
     description:
-      "Day-to-day tracking of commissions, listing expenses, and closing costs, so your books stay accurate deal by deal.",
+      "Day-to-day tracking of commissions, listing expenses, and closing costs, so you have accurate financials whenever you need them.",
+    details:
+      "We reconcile your commission deposits and closing costs against your statements on a regular schedule, categorize marketing and listing expenses correctly, and keep your books audit-ready year-round. We work inside whatever accounting software you already use.",
+    relatedLinks: [
+      { label: "QuickBooks", href: "https://quickbooks.intuit.com/" },
+      { label: "Xero", href: "https://www.xero.com/" },
+      { label: "Digits", href: "https://digits.com/" },
+    ],
   },
   {
     icon: PieChartIcon,
     title: "Budgeting",
     description:
       "Budgets built around irregular, commission-based income and marketing spend, not generic templates.",
+    details:
+      "We build your budget around real, irregular commission income rather than a steady paycheck assumption, so marketing spend and personal draws are planned around your actual deal cycle.",
+    relatedLinks: [
+      { label: "SBA Business Guide", href: "https://www.sba.gov/business-guide" },
+    ],
   },
   {
     icon: HandshakeIcon,
     title: "Financial Consulting",
     description:
-      "Guidance on entity structure, 1099 income planning, and growth decisions, from someone who understands real estate income cycles.",
+      "Guidance on entity structure, 1099 income planning, and growth decisions — business analysis, where to grow, and how to source funding — from someone who understands real estate income cycles.",
+    details:
+      "Considering forming an entity, growing your team, or expanding into a new market? We walk through the numbers with you first, so the decision is grounded in what your business can actually support.",
+    relatedLinks: [
+      { label: "SBA: Fund Your Business", href: "https://www.sba.gov/business-guide" },
+      { label: "SCORE Business Mentoring", href: "https://www.score.org/" },
+    ],
   },
   {
     icon: TrendingUpIcon,
     title: "Cash Flow Management",
     description:
       "Visibility into deal-based, inconsistent income so you can plan through slow months without cash flow surprises.",
+    details:
+      "We track your deal pipeline against your fixed costs, so you can see a slow month coming and plan around it instead of being surprised by it.",
+    relatedLinks: [
+      { label: "SBA Business Guide", href: "https://www.sba.gov/business-guide" },
+    ],
   },
   {
     icon: ReceiptIcon,
     title: "Tax Preparation",
     description:
-      "Accurate, timely tax filing that accounts for 1099 income, mileage, and real estate-specific deductions.",
+      "Maximizing every deduction available to you — mileage, marketing, 1099 income — and making sure you pay exactly what you truly owe.",
+    details:
+      "We review a full year of your books for every available deduction — mileage, marketing, home office, 1099 income planning — and file accurately and on time.",
+    relatedLinks: [
+      {
+        label: "IRS Small Business & Self-Employed Tax Center",
+        href: "https://www.irs.gov/businesses/small-businesses-self-employed",
+      },
+    ],
+  },
+  {
+    icon: UsersIcon,
+    title: "Payroll",
+    description:
+      "Processing payroll accurately and on time for your support staff and team, every pay period without fail.",
+    details:
+      "If you employ support staff or a team, we handle the full payroll cycle — withholdings, payroll tax deposits — so everyone is paid correctly and on time, every pay period.",
+    relatedLinks: [
+      {
+        label: "IRS Employment Taxes",
+        href: "https://www.irs.gov/businesses/small-businesses-self-employed/employment-taxes",
+      },
+      { label: "DOL Wage and Hour Division", href: "https://www.dol.gov/agencies/whd" },
+    ],
+  },
+  {
+    icon: CompassIcon,
+    title: "Fractional CFO",
+    description:
+      "High-level financial strategy and leadership for your business, without the cost of a full-time hire — guidance on scaling your team and growing your deal volume.",
+    details:
+      "Get strategic financial leadership for your business — forecasting, scaling your team, growing deal volume — without the overhead of a full-time CFO on staff.",
+    relatedLinks: [{ label: "SCORE Business Mentoring", href: "https://www.score.org/" }],
   },
   {
     icon: ActivityIcon,
     title: "Business Management",
     description:
       "Deal pipeline, marketing spend, and commission-split metrics tracked and reported clearly.",
+    details:
+      "We track the metrics that actually reflect how your business is performing — deal pipeline, marketing ROI, commission splits — and report on them clearly so you always know where you stand.",
   },
 ];
 
@@ -110,6 +170,32 @@ const points: WhyUsPoint[] = [
   },
 ];
 
+const faqItems: FaqItem[] = [
+  {
+    question: "I'm a solo agent — is this still for me?",
+    answer:
+      "Yes. Whether you're a solo agent or run a team, we tailor our services to how you actually earn.",
+  },
+  {
+    question: "How do you handle inconsistent, commission-based income?",
+    answer:
+      "That's the core of our cash flow and budgeting work — planning around the slow months, not just the good ones.",
+  },
+  {
+    question: "Do you handle 1099 tax planning?",
+    answer: "Yes, including mileage, marketing, and other real estate-specific deductions.",
+  },
+  {
+    question: "Can you help me decide whether to grow my team?",
+    answer: "Yes, that's a common financial consulting and fractional CFO conversation.",
+  },
+  {
+    question: "How do I get started?",
+    answer:
+      "Reach out through the contact form — tell us a bit about your business and we'll follow up to see how we can help.",
+  },
+];
+
 export default function RealEstatePage() {
   return (
     <>
@@ -141,6 +227,7 @@ export default function RealEstatePage() {
         description="Real estate income doesn't arrive on a steady schedule. Omar Odeh, CPA works with you throughout the year so your books stay accurate and your decisions stay informed, deal or no deal."
         points={points}
       />
+      <Faq items={faqItems} />
       <CtaSection
         heading="Ready to Get Your Business's Books in Order?"
         description="Reach out and tell us about your business — we'll follow up to see how we can help."

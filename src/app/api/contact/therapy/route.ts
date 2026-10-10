@@ -6,6 +6,7 @@ import {
   saveInquiryRecord,
   validateInquiryFields,
 } from "@/lib/inquiries";
+import { sendInquiryNotification } from "@/lib/email";
 
 export const runtime = "nodejs";
 
@@ -22,6 +23,7 @@ export async function POST(request: NextRequest) {
     const fields = validateInquiryFields(formData);
 
     const record = await saveInquiryRecord({ category: "therapy", ...fields, ip });
+    await sendInquiryNotification(record);
 
     return NextResponse.json({ success: true, id: record.id }, { status: 201 });
   } catch (error) {

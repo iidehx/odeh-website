@@ -24,3 +24,43 @@ body {
     scroll-behavior: auto;
   }
 }
+
+/* Accessibility: a clear, consistent focus indicator for keyboard users
+   on every interactive element, site-wide. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #b45309;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Accordion disclosure markers are drawn with our own chevron icon
+   instead of the browser default, in both Firefox and WebKit. */
+summary {
+  list-style: none;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: 1rem;
+  z-index: 100;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: top 0.15s ease-in-out;
+}
+.skip-link:focus {
+  top: 1rem;
+}
