@@ -1,9 +1,21 @@
 import type { ComponentType } from "react";
+import { ChevronRightIcon } from "@/components/icons";
+
+export interface ServiceLink {
+  label: string;
+  href: string;
+}
 
 export interface ServiceItem {
   icon: ComponentType<{ className?: string }>;
   title: string;
   description: string;
+  details: string;
+  relatedLinks?: ServiceLink[];
+}
+
+function slugify(title: string) {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 }
 
 export default function Services({
@@ -28,24 +40,60 @@ export default function Services({
             {heading}
           </h2>
           <p className="mt-4 text-base leading-relaxed text-slate-600">{description}</p>
+          <p className="mt-2 text-sm text-slate-500">
+            Select any service below for more detail.
+          </p>
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
-            <div
+            <details
               key={service.title}
-              className="rounded-xl border border-slate-200 bg-white p-6 transition-shadow hover:shadow-md"
+              id={`service-${slugify(service.title)}`}
+              className="group scroll-mt-24 rounded-xl border border-slate-200 bg-white open:shadow-md"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-amber-50 text-amber-700">
-                <service.icon className="h-5 w-5" />
-              </span>
-              <h3 className="mt-5 text-base font-semibold text-slate-900">
-                {service.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                {service.description}
-              </p>
-            </div>
+              <summary className="flex cursor-pointer items-start gap-4 p-6">
+                <span className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-amber-50 text-amber-700">
+                  <service.icon className="h-5 w-5" />
+                </span>
+                <span className="flex-1">
+                  <span className="block text-base font-semibold text-slate-900">
+                    {service.title}
+                  </span>
+                  <span className="mt-2 block text-sm leading-relaxed text-slate-600">
+                    {service.description}
+                  </span>
+                </span>
+                <ChevronRightIcon className="mt-1 h-5 w-5 flex-none text-slate-400 transition-transform group-open:rotate-90" />
+              </summary>
+
+              <div className="px-6 pb-6 pl-[4.25rem]">
+                <p className="text-sm leading-relaxed text-slate-600">{service.details}</p>
+
+                {service.relatedLinks && service.relatedLinks.length > 0 && (
+                  <div className="mt-4">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                      Related Resources
+                    </p>
+                    <ul className="mt-2 space-y-1.5">
+                      {service.relatedLinks.map((link) => (
+                        <li key={link.href}>
+                          <a
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm font-medium text-amber-700 underline underline-offset-2 hover:text-amber-800"
+                          >
+                            {link.label}
+                            <span className="sr-only"> (opens in a new tab)</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </details>
           ))}
         </div>
       </div>
