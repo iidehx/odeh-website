@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms | Omar Odeh, CPA",
   description: "Terms of use for the Omar Odeh, CPA website.",
-  alternates: { canonical: "/therapy/terms" },
+  alternates: { canonical: "/terms" },
   robots: { index: true, follow: true },
 };
 

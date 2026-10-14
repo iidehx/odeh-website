@@ -21,7 +21,7 @@ export default function CtaSection({
         <div className="mt-9">
           <Link
             href={ctaHref}
-            className="inline-block rounded-md bg-amber-600 px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-amber-500"
+            className="inline-block rounded-md bg-amber-700 px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-amber-800"
           >
             {ctaLabel}
           </Link>
