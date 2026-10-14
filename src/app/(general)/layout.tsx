@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import SkipLink from "@/components/SkipLink";
 
 export const metadata: Metadata = {
-  title: "Omar Odeh, CPA | Accounting for Growing Businesses",
+  title: "Omar Odeh, CPA | Accounting & Bookkeeping for Small Business",
   description:
-    "Omar Odeh, CPA provides bookkeeping, payroll, financial consulting, cash flow management, tax preparation, and fractional CFO services, with specialized experience in dental clinics, therapy practices, and real estate businesses.",
+    "CPA firm for bookkeeping, tax preparation, payroll, and fractional CFO services, specializing in dental clinics, therapy practices, and real estate.",
   keywords: [
     "Omar Odeh CPA",
     "small business accountant",
@@ -23,17 +23,19 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Omar Odeh, CPA | Accounting for Growing Businesses",
+    title: "Omar Odeh, CPA | Accounting & Bookkeeping for Small Business",
     description:
       "Bookkeeping, payroll, financial consulting, cash flow management, tax preparation, and fractional CFO services, with specialized experience in dental clinics, therapy practices, and real estate businesses.",
     url: "/",
     siteName: "Omar Odeh, CPA",
     type: "website",
     locale: "en_US",
+    images: ["/opengraph-image.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Omar Odeh, CPA | Accounting for Growing Businesses",
+    images: ["/opengraph-image.png"],
+    title: "Omar Odeh, CPA | Accounting & Bookkeeping for Small Business",
     description:
       "Bookkeeping, payroll, financial consulting, cash flow management, tax preparation, and fractional CFO services, with specialized experience in dental clinics, therapy practices, and real estate businesses.",
   },

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy | Omar Odeh, CPA",
   description: "How Omar Odeh, CPA collects, uses, and protects your information.",
-  alternates: { canonical: "/real-estate/privacy" },
+  alternates: { canonical: "/privacy" },
   robots: { index: true, follow: true },
 };
 

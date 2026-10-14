@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import SkipLink from "@/components/SkipLink";
 
 export const metadata: Metadata = {
-  title: "ABA & Therapy Practice Accounting | Omar Odeh, CPA",
+  title: "ABA & Therapy Practice CPA and Bookkeeping | Omar Odeh, CPA",
   description:
-    "Omar Odeh, CPA specializes in bookkeeping, payroll, tax preparation, cash flow, and fractional CFO services for ABA, physical, occupational, and speech therapy practices. Contact us today.",
+    "CPA for ABA, physical, occupational, and speech therapy practices: bookkeeping, payroll, tax prep, and cash flow help. Contact Omar Odeh, CPA.",
   keywords: [
     "ABA therapy accountant",
     "ABA practice bookkeeping",
@@ -22,17 +22,19 @@ export const metadata: Metadata = {
     canonical: "/therapy",
   },
   openGraph: {
-    title: "ABA & Therapy Practice Accounting | Omar Odeh, CPA",
+    title: "ABA & Therapy Practice CPA and Bookkeeping | Omar Odeh, CPA",
     description:
       "Bookkeeping, budgeting, financial consulting, cash flow, tax preparation, payroll, fractional CFO, and business management built for ABA and therapy practices.",
     url: "/therapy",
     siteName: "Omar Odeh, CPA",
     type: "website",
     locale: "en_US",
+    images: ["/opengraph-image.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ABA & Therapy Practice Accounting | Omar Odeh, CPA",
+    images: ["/opengraph-image.png"],
+    title: "ABA & Therapy Practice CPA and Bookkeeping | Omar Odeh, CPA",
     description:
       "Bookkeeping, budgeting, financial consulting, cash flow, tax preparation, payroll, fractional CFO, and business management built for ABA and therapy practices.",
   },

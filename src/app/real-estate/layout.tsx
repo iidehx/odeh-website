@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import SkipLink from "@/components/SkipLink";
 
 export const metadata: Metadata = {
-  title: "Real Estate Accounting | Omar Odeh, CPA",
+  title: "Real Estate CPA & Bookkeeping for Agents | Omar Odeh, CPA",
   description:
-    "Omar Odeh, CPA specializes in bookkeeping, payroll, tax preparation, cash flow, and fractional CFO services for real estate agents, brokers, and real estate businesses. Contact us today.",
+    "Real estate CPA for agents and brokers: bookkeeping, 1099 tax planning, payroll, and cash flow for commission income. Contact Omar Odeh, CPA.",
   keywords: [
     "real estate accountant",
     "real estate CPA",
@@ -22,17 +22,19 @@ export const metadata: Metadata = {
     canonical: "/real-estate",
   },
   openGraph: {
-    title: "Real Estate Accounting | Omar Odeh, CPA",
+    title: "Real Estate CPA & Bookkeeping for Agents | Omar Odeh, CPA",
     description:
       "Bookkeeping, budgeting, financial consulting, cash flow, tax preparation, payroll, fractional CFO, and business management built for real estate businesses.",
     url: "/real-estate",
     siteName: "Omar Odeh, CPA",
     type: "website",
     locale: "en_US",
+    images: ["/opengraph-image.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Real Estate Accounting | Omar Odeh, CPA",
+    images: ["/opengraph-image.png"],
+    title: "Real Estate CPA & Bookkeeping for Agents | Omar Odeh, CPA",
     description:
       "Bookkeeping, budgeting, financial consulting, cash flow, tax preparation, payroll, fractional CFO, and business management built for real estate businesses.",
   },

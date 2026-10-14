@@ -201,7 +201,7 @@ export default function RealEstatePage() {
     <>
       <Hero
         label="Accounting for Real Estate"
-        headline="Financial Clarity for Your Real Estate Business."
+        headline="Real Estate CPA and Bookkeeping for Agents and Brokers."
         description="Omar Odeh, CPA helps real estate agents, brokers, and real estate businesses stay organized and in control of their finances with bookkeeping, budgeting, cash flow management, and business management built around how real estate income actually works."
         primaryCtaHref="/real-estate/contact"
         primaryCtaLabel="Contact Us"

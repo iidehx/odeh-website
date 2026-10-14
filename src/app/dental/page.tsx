@@ -202,7 +202,7 @@ export default function DentalPage() {
     <>
       <Hero
         label="Accounting for Dental Clinics"
-        headline="Financial Clarity for Your Dental Clinic."
+        headline="Dental CPA and Bookkeeping for Your Clinic."
         description="Omar Odeh, CPA helps dental clinics stay organized and in control of their finances with bookkeeping, budgeting, cash flow management, and business management built around how a dental office actually runs."
         primaryCtaHref="/dental/contact"
         primaryCtaLabel="Contact Us"

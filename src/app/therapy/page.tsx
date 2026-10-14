@@ -202,7 +202,7 @@ export default function TherapyPage() {
     <>
       <Hero
         label="Accounting for ABA & Therapy Practices"
-        headline="Financial Clarity for Your Therapy Practice."
+        headline="Accounting and Bookkeeping for ABA and Therapy Practices."
         description="Omar Odeh, CPA helps ABA, physical, occupational, and speech therapy practices stay organized and in control of their finances with bookkeeping, budgeting, cash flow management, and business management built around how a therapy practice actually runs."
         primaryCtaHref="/therapy/contact"
         primaryCtaLabel="Contact Us"

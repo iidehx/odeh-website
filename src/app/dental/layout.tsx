@@ -4,10 +4,12 @@ import Footer from "@/components/Footer";
 import SkipLink from "@/components/SkipLink";
 
 export const metadata: Metadata = {
-  title: "Dental Clinic Accounting | Omar Odeh, CPA",
+  title: "Dental CPA & Bookkeeping for Dental Clinics | Omar Odeh, CPA",
   description:
-    "Omar Odeh, CPA specializes in bookkeeping, payroll, tax preparation, cash flow, and fractional CFO services for dental clinics. Contact us today.",
+    "Dental CPA for clinic owners: bookkeeping, tax preparation, payroll, and fractional CFO services, explained in plain English. Contact Omar Odeh, CPA.",
   keywords: [
+    "dental CPA",
+    "dental bookkeeping",
     "dental clinic accountant",
     "dental CPA",
     "bookkeeping for dental clinics",
@@ -22,17 +24,19 @@ export const metadata: Metadata = {
     canonical: "/dental",
   },
   openGraph: {
-    title: "Dental Clinic Accounting | Omar Odeh, CPA",
+    title: "Dental CPA & Bookkeeping for Dental Clinics | Omar Odeh, CPA",
     description:
       "Bookkeeping, budgeting, financial consulting, cash flow, tax preparation, payroll, fractional CFO, and business management built for dental clinics.",
     url: "/dental",
     siteName: "Omar Odeh, CPA",
     type: "website",
     locale: "en_US",
+    images: ["/opengraph-image.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dental Clinic Accounting | Omar Odeh, CPA",
+    images: ["/opengraph-image.png"],
+    title: "Dental CPA & Bookkeeping for Dental Clinics | Omar Odeh, CPA",
     description:
       "Bookkeeping, budgeting, financial consulting, cash flow, tax preparation, payroll, fractional CFO, and business management built for dental clinics.",
   },
