@@ -216,6 +216,11 @@ const faqItems: FaqItem[] = [
       "Those are where we have the deepest specialized experience, but we work with growing businesses across industries.",
   },
   {
+    question: "Do you work with businesses outside California?",
+    answer:
+      "Yes. We work fully online with businesses anywhere in the US. Meetings happen by phone or video call, so you never need to be local.",
+  },
+  {
     question: "How do I get started?",
     answer:
       "Reach out through the contact details below — tell us a bit about your business and we'll follow up to see how we can help.",
@@ -228,7 +233,7 @@ export default function HomePage() {
       <Hero
         label="Accounting for Growing Businesses"
         headline="Accounting and Bookkeeping, Built Around Your Business."
-        description="Omar Odeh, CPA provides bookkeeping, budgeting, financial consulting, cash flow management, tax preparation, and business management for growing businesses, with specialized experience in dental clinics, therapy practices, and real estate businesses."
+        description="Omar Odeh, CPA provides bookkeeping, budgeting, financial consulting, cash flow management, tax preparation, and business management for growing businesses across the US, with specialized experience in dental clinics, therapy practices, and real estate businesses. Everything is handled online."
         primaryCtaHref="#industries"
         primaryCtaLabel="Get Started"
         secondaryCtaHref="#services"

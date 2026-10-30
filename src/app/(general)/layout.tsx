@@ -9,6 +9,8 @@ export const metadata: Metadata = {
     "CPA firm for bookkeeping, tax preparation, payroll, and fractional CFO services, specializing in dental clinics, therapy practices, and real estate.",
   keywords: [
     "Omar Odeh CPA",
+    "virtual CPA",
+    "online accountant for small business",
     "small business accountant",
     "bookkeeping services",
     "payroll services",
@@ -67,7 +69,7 @@ export default function GeneralLayout({ children }: { children: React.ReactNode 
     name: "Omar Odeh, CPA",
     description:
       "Bookkeeping, budgeting, financial consulting, cash flow management, tax preparation, payroll, fractional CFO, and business management for growing businesses.",
-    email: "Odeh90@gmail.com",
+    email: "info@omarodehcpa.com",
     telephone: "+17142049779",
     url: "https://www.omarodehcpa.com",
     areaServed: "US",
@@ -91,7 +93,7 @@ export default function GeneralLayout({ children }: { children: React.ReactNode 
       <Nav homeHref="/" links={links} ctaHref="#industries" ctaLabel="Get Started" />
       <main id="main-content" className="flex-1">{children}</main>
       <Footer
-        description="Omar Odeh, CPA provides accounting for growing businesses, with specialized experience in dental clinics, therapy practices, and real estate businesses."
+        description="Omar Odeh, CPA provides online accounting for growing businesses nationwide, with specialized experience in dental clinics, therapy practices, and real estate businesses."
         privacyHref="/privacy"
         termsHref="/terms"
       />

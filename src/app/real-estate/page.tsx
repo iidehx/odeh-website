@@ -190,6 +190,11 @@ const faqItems: FaqItem[] = [
     answer: "Yes, that's a common financial consulting and fractional CFO conversation.",
   },
   {
+    question: "Do you work with agents and brokers outside California?",
+    answer:
+      "Yes. We work fully online with real estate professionals anywhere in the US. Meetings happen by phone or video call, so you never need to be local.",
+  },
+  {
     question: "How do I get started?",
     answer:
       "Reach out through the contact form — tell us a bit about your business and we'll follow up to see how we can help.",
@@ -202,7 +207,7 @@ export default function RealEstatePage() {
       <Hero
         label="Accounting for Real Estate"
         headline="Real Estate CPA and Bookkeeping for Agents and Brokers."
-        description="Omar Odeh, CPA helps real estate agents, brokers, and real estate businesses stay organized and in control of their finances with bookkeeping, budgeting, cash flow management, and business management built around how real estate income actually works."
+        description="Omar Odeh, CPA helps real estate agents, brokers, and real estate businesses anywhere in the US stay organized and in control of their finances with bookkeeping, budgeting, cash flow management, and business management built around how real estate income actually works. Everything is handled online, so your location doesn't matter."
         primaryCtaHref="/real-estate/contact"
         primaryCtaLabel="Contact Us"
         secondaryCtaHref="#services"

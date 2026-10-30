@@ -191,6 +191,11 @@ const faqItems: FaqItem[] = [
       "Yes, that's a common financial consulting and fractional CFO conversation — we'll walk through the numbers with you.",
   },
   {
+    question: "Do you work with therapy practices outside California?",
+    answer:
+      "Yes. We work fully online with ABA and therapy practices anywhere in the US. Meetings happen by phone or video call, so your practice never needs to be local.",
+  },
+  {
     question: "How do I get started?",
     answer:
       "Reach out through the contact form — tell us a bit about your practice and we'll follow up to see how we can help.",
@@ -203,7 +208,7 @@ export default function TherapyPage() {
       <Hero
         label="Accounting for ABA & Therapy Practices"
         headline="Accounting and Bookkeeping for ABA and Therapy Practices."
-        description="Omar Odeh, CPA helps ABA, physical, occupational, and speech therapy practices stay organized and in control of their finances with bookkeeping, budgeting, cash flow management, and business management built around how a therapy practice actually runs."
+        description="Omar Odeh, CPA helps ABA, physical, occupational, and speech therapy practices anywhere in the US stay organized and in control of their finances with bookkeeping, budgeting, cash flow management, and business management built around how a therapy practice actually runs. Everything is handled online, so your location doesn't matter."
         primaryCtaHref="/therapy/contact"
         primaryCtaLabel="Contact Us"
         secondaryCtaHref="#services"

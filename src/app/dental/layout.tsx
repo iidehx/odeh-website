@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   keywords: [
     "dental CPA",
     "dental bookkeeping",
+    "virtual dental CPA",
+    "online CPA for dentists",
     "dental clinic accountant",
     "dental CPA",
     "bookkeeping for dental clinics",
@@ -67,7 +69,7 @@ export default function DentalLayout({ children }: { children: React.ReactNode }
     name: "Omar Odeh, CPA — Dental Clinic Accounting",
     description:
       "Bookkeeping, budgeting, financial consulting, cash flow management, tax preparation, payroll, fractional CFO, and business management for dental clinics.",
-    email: "Odeh90@gmail.com",
+    email: "info@omarodehcpa.com",
     telephone: "+17142049779",
     url: "https://www.omarodehcpa.com/dental",
     areaServed: "US",

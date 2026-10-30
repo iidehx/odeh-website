@@ -28,8 +28,8 @@ export default function Footer({
           <ul className="mt-4 space-y-3 text-sm text-slate-600">
             <li className="flex items-center gap-2">
               <MailIcon className="h-4 w-4 text-slate-400" />
-              <a href="mailto:Odeh90@gmail.com" className="hover:text-slate-900">
-                Odeh90@gmail.com
+              <a href="mailto:info@omarodehcpa.com" className="hover:text-slate-900">
+                info@omarodehcpa.com
               </a>
             </li>
             <li className="flex items-center gap-2">

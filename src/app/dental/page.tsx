@@ -191,6 +191,11 @@ const faqItems: FaqItem[] = [
     answer: "Yes, that falls under our financial consulting and fractional CFO services.",
   },
   {
+    question: "Do you work with dental clinics outside California?",
+    answer:
+      "Yes. We work fully online with dental clinics anywhere in the US. Meetings happen by phone or video call, so your clinic never needs to be local.",
+  },
+  {
     question: "How do I get started?",
     answer:
       "Reach out through the contact form — tell us a bit about your clinic and we'll follow up to see how we can help.",
@@ -203,7 +208,7 @@ export default function DentalPage() {
       <Hero
         label="Accounting for Dental Clinics"
         headline="Dental CPA and Bookkeeping for Your Clinic."
-        description="Omar Odeh, CPA helps dental clinics stay organized and in control of their finances with bookkeeping, budgeting, cash flow management, and business management built around how a dental office actually runs."
+        description="Omar Odeh, CPA helps dental clinics anywhere in the US stay organized and in control of their finances with bookkeeping, budgeting, cash flow management, and business management built around how a dental office actually runs. Everything is handled online, so your location doesn't matter."
         primaryCtaHref="/dental/contact"
         primaryCtaLabel="Contact Us"
         secondaryCtaHref="#services"

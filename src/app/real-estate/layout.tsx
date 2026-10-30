@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   keywords: [
     "real estate accountant",
     "real estate CPA",
+    "virtual real estate CPA",
+    "online accountant for realtors",
     "bookkeeping for real estate agents",
     "real estate agent payroll",
     "fractional CFO for real estate",
@@ -65,7 +67,7 @@ export default function RealEstateLayout({ children }: { children: React.ReactNo
     name: "Omar Odeh, CPA — Real Estate Accounting",
     description:
       "Bookkeeping, budgeting, financial consulting, cash flow management, tax preparation, payroll, fractional CFO, and business management for real estate agents, brokers, and real estate businesses.",
-    email: "Odeh90@gmail.com",
+    email: "info@omarodehcpa.com",
     telephone: "+17142049779",
     url: "https://www.omarodehcpa.com/real-estate",
     areaServed: "US",

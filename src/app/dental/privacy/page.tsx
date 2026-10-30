@@ -59,10 +59,10 @@ export default function DentalPrivacyPage() {
               If you have questions about this policy or would like your
               information removed, contact us at{" "}
               <a
-                href="mailto:Odeh90@gmail.com"
+                href="mailto:info@omarodehcpa.com"
                 className="text-amber-700 hover:underline"
               >
-                Odeh90@gmail.com
+                info@omarodehcpa.com
               </a>
               .
             </p>

@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   keywords: [
     "ABA therapy accountant",
     "ABA practice bookkeeping",
+    "virtual CPA for therapy practices",
+    "online accountant for ABA practices",
     "therapy practice accountant",
     "physical therapy CPA",
     "bookkeeping for therapy practices",
@@ -65,7 +67,7 @@ export default function TherapyLayout({ children }: { children: React.ReactNode 
     name: "Omar Odeh, CPA — ABA & Therapy Practice Accounting",
     description:
       "Bookkeeping, budgeting, financial consulting, cash flow management, tax preparation, payroll, fractional CFO, and business management for ABA, physical, occupational, and speech therapy practices.",
-    email: "Odeh90@gmail.com",
+    email: "info@omarodehcpa.com",
     telephone: "+17142049779",
     url: "https://www.omarodehcpa.com/therapy",
     areaServed: "US",
