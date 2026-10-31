@@ -257,6 +257,26 @@ export default function DentalPage() {
               <ChevronRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </span>
           </Link>
+          <Link
+            href="/dental/resources/dental-cpa-cost"
+            className="group mt-4 flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-8 transition-shadow hover:shadow-md sm:flex-row sm:items-center sm:justify-between"
+          >
+            <span>
+              <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-amber-700">
+                Pricing Guide
+              </span>
+              <span className="mt-2 block text-xl font-semibold text-slate-900">
+                How much does a dental CPA cost?
+              </span>
+              <span className="mt-1 block text-sm text-slate-600">
+                2026 price ranges by service and clinic size, and what&apos;s usually included.
+              </span>
+            </span>
+            <span className="flex flex-none items-center gap-1 text-sm font-semibold text-amber-700">
+              Read the Guide
+              <ChevronRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </span>
+          </Link>
         </div>
       </section>
       <Faq items={faqItems} />

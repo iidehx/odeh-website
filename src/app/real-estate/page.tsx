@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Hero from "@/components/Hero";
 import HeroGraphic from "@/components/HeroGraphic";
 import Services, { type ServiceItem } from "@/components/Services";
@@ -8,6 +9,7 @@ import CtaSection from "@/components/CtaSection";
 import {
   ActivityIcon,
   CalculatorIcon,
+  ChevronRightIcon,
   ClipboardCheckIcon,
   CompassIcon,
   FileTextIcon,
@@ -232,6 +234,30 @@ export default function RealEstatePage() {
         description="Real estate income doesn't arrive on a steady schedule. Omar Odeh, CPA works with you throughout the year so your books stay accurate and your decisions stay informed, deal or no deal."
         points={points}
       />
+      <section className="bg-white pb-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <Link
+            href="/real-estate/resources/quarterly-tax-calculator"
+            className="group flex flex-col gap-4 rounded-2xl border border-amber-200 bg-amber-50 p-8 transition-shadow hover:shadow-md sm:flex-row sm:items-center sm:justify-between"
+          >
+            <span>
+              <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-amber-700">
+                Free Tool
+              </span>
+              <span className="mt-2 block text-xl font-semibold text-slate-900">
+                How much of each commission check should you set aside for taxes?
+              </span>
+              <span className="mt-1 block text-sm text-slate-600">
+                Get your own percentage and the 2026 quarterly deadlines in about a minute.
+              </span>
+            </span>
+            <span className="flex flex-none items-center gap-1 text-sm font-semibold text-amber-700">
+              Try the Agent Tax Calculator
+              <ChevronRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </span>
+          </Link>
+        </div>
+      </section>
       <Faq items={faqItems} />
       <CtaSection
         heading="Ready to Get Your Business's Books in Order?"
