@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/dental/resources/dental-cpa-cost`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/therapy`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${siteUrl}/therapy/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${siteUrl}/therapy/resources/aba-cash-reserve-calculator`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/real-estate`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${siteUrl}/real-estate/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/real-estate/resources/quarterly-tax-calculator`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
