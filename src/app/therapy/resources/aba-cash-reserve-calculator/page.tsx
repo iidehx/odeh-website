@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import CashReserveCalculator from "@/components/CashReserveCalculator";
 import Faq, { type FaqItem } from "@/components/Faq";
 import CtaSection from "@/components/CtaSection";
+import ExternalLink from "@/components/ExternalLink";
 
 export const metadata: Metadata = {
   title: "ABA Practice Cash Reserve Calculator (2026) | Omar Odeh, CPA",
@@ -56,18 +57,6 @@ const faqItems: FaqItem[] = [
       "A line of credit can bridge a temporary gap, but interest adds up if you lean on it every month. Many practices use both: a reserve for the normal payment gap, and a line of credit for growth or unexpected delays.",
   },
 ];
-
-const linkClasses =
-  "font-medium text-amber-700 underline underline-offset-2 hover:text-amber-800";
-
-function ExternalLink({ href, children }: { href: string; children: ReactNode }) {
-  return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={linkClasses}>
-      {children}
-      <span className="sr-only"> (opens in a new tab)</span>
-    </a>
-  );
-}
 
 function H2({ children, first = false }: { children: ReactNode; first?: boolean }) {
   return (

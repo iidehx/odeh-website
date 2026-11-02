@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import CommissionTaxCalculator from "@/components/CommissionTaxCalculator";
 import Faq, { type FaqItem } from "@/components/Faq";
 import CtaSection from "@/components/CtaSection";
+import ExternalLink from "@/components/ExternalLink";
 
 export const metadata: Metadata = {
   title: "Real Estate Agent Tax Calculator (2026) | Omar Odeh, CPA",
@@ -62,18 +62,6 @@ const faqItems: FaqItem[] = [
       "Because self-employed agents also pay self-employment tax: 15.3% for Social Security and Medicare on most of your net earnings. An employee splits that with their employer; as a 1099 agent, you pay both halves.",
   },
 ];
-
-const linkClasses =
-  "font-medium text-amber-700 underline underline-offset-2 hover:text-amber-800";
-
-function ExternalLink({ href, children }: { href: string; children: ReactNode }) {
-  return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={linkClasses}>
-      {children}
-      <span className="sr-only"> (opens in a new tab)</span>
-    </a>
-  );
-}
 
 export default function QuarterlyTaxCalculatorPage() {
   return (

@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import Faq, { type FaqItem } from "@/components/Faq";
 import CtaSection from "@/components/CtaSection";
+import ExternalLink, { linkClasses } from "@/components/ExternalLink";
 
 const PATH = "/dental/resources/dental-cpa-cost";
 const TITLE = "How Much Does a Dental CPA Cost? (2026 Pricing Guide)";
@@ -82,18 +83,6 @@ const faqItems: FaqItem[] = [
       "Accounting and tax preparation fees for your business are generally deductible as an ordinary business expense. Fees for your personal return are treated differently, so ask your CPA how they bill those.",
   },
 ];
-
-const linkClasses =
-  "font-medium text-amber-700 underline underline-offset-2 hover:text-amber-800";
-
-function ExternalLink({ href, children }: { href: string; children: ReactNode }) {
-  return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={linkClasses}>
-      {children}
-      <span className="sr-only"> (opens in a new tab)</span>
-    </a>
-  );
-}
 
 function H2({ children }: { children: ReactNode }) {
   return (

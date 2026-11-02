@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/dental/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/dental/resources/dental-overhead-calculator`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/dental/resources/dental-cpa-cost`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${siteUrl}/dental/resources/production-vs-collections`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/therapy`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${siteUrl}/therapy/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/therapy/resources/aba-cash-reserve-calculator`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },

@@ -114,7 +114,7 @@ const services: ServiceItem[] = [
     description:
       "Chair utilization, hygiene production, overhead ratios, and other clinic-level metrics tracked and reported clearly.",
     details:
-      "We track the metrics that actually reflect how your clinic is performing — chair utilization, hygiene production, overhead as a percentage of production — and report on them clearly so you always know where you stand.",
+      "We track the metrics that actually reflect how your clinic is performing — chair utilization, hygiene production, overhead as a percentage of collections — and report on them clearly so you always know where you stand.",
   },
 ];
 
@@ -270,6 +270,26 @@ export default function DentalPage() {
               </span>
               <span className="mt-1 block text-sm text-slate-600">
                 2026 price ranges by service and clinic size, and what&apos;s usually included.
+              </span>
+            </span>
+            <span className="flex flex-none items-center gap-1 text-sm font-semibold text-amber-700">
+              Read the Guide
+              <ChevronRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </span>
+          </Link>
+          <Link
+            href="/dental/resources/production-vs-collections"
+            className="group mt-4 flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-8 transition-shadow hover:shadow-md sm:flex-row sm:items-center sm:justify-between"
+          >
+            <span>
+              <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-amber-700">
+                Plain-English Guide
+              </span>
+              <span className="mt-2 block text-xl font-semibold text-slate-900">
+                Production vs. collections, explained
+              </span>
+              <span className="mt-1 block text-sm text-slate-600">
+                One clinic&apos;s month worked through, from production to profit.
               </span>
             </span>
             <span className="flex flex-none items-center gap-1 text-sm font-semibold text-amber-700">
