@@ -3,6 +3,7 @@ import HeroGraphic from "@/components/HeroGraphic";
 import Services, { type ServiceItem } from "@/components/Services";
 import Process, { type ProcessStep } from "@/components/Process";
 import Industries, { type IndustryItem } from "@/components/Industries";
+import Resources, { type ResourceItem } from "@/components/Resources";
 import WhyUs, { type WhyUsPoint } from "@/components/WhyUs";
 import Faq, { type FaqItem } from "@/components/Faq";
 import CtaSection from "@/components/CtaSection";
@@ -227,6 +228,45 @@ const faqItems: FaqItem[] = [
   },
 ];
 
+const resources: ResourceItem[] = [
+  {
+    tag: "Guide",
+    title: "Bookkeeper vs. CPA: Which Does Your Business Need?",
+    description: "What each one does, and the right mix for your stage of business.",
+    href: "/resources/bookkeeper-vs-cpa",
+  },
+  {
+    tag: "Dental · Free Tool",
+    title: "Dental Overhead Calculator",
+    description: "Compare your clinic's overhead with typical dental benchmarks.",
+    href: "/dental/resources/dental-overhead-calculator",
+  },
+  {
+    tag: "Dental · Guide",
+    title: "Production vs. Collections, Explained",
+    description: "One clinic's month worked through, from production to profit.",
+    href: "/dental/resources/production-vs-collections",
+  },
+  {
+    tag: "Dental · Guide",
+    title: "How Much Does a Dental CPA Cost?",
+    description: "2026 price ranges by service and clinic size.",
+    href: "/dental/resources/dental-cpa-cost",
+  },
+  {
+    tag: "Therapy · Free Tool",
+    title: "ABA Practice Cash Reserve Calculator",
+    description: "How much cash to keep on hand while insurance payments catch up.",
+    href: "/therapy/resources/aba-cash-reserve-calculator",
+  },
+  {
+    tag: "Real Estate · Free Tool",
+    title: "Real Estate Agent Tax Calculator",
+    description: "How much of each commission check to set aside for taxes.",
+    href: "/real-estate/resources/quarterly-tax-calculator",
+  },
+];
+
 export default function HomePage() {
   return (
     <>
@@ -259,6 +299,7 @@ export default function HomePage() {
         description="Growing businesses deserve more than a once-a-year tax appointment. Omar Odeh, CPA works with you throughout the year so your books stay accurate and your decisions stay informed."
         points={points}
       />
+      <Resources resources={resources} />
       <Faq items={faqItems} />
       <CtaSection
         heading="Ready to Get Your Books in Order?"
