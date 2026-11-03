@@ -12,10 +12,8 @@ const CATEGORY_LABELS: Record<InquiryRecord["category"], string> = {
 export async function sendInquiryNotification(record: InquiryRecord) {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    console.warn(
-      "RESEND_API_KEY is not set — skipping email notification. The inquiry was still saved."
-    );
-    return;
+    console.warn("RESEND_API_KEY is not set — skipping email notification.");
+    return false;
   }
 
   const categoryLabel = CATEGORY_LABELS[record.category] ?? record.category;
@@ -52,9 +50,12 @@ export async function sendInquiryNotification(record: InquiryRecord) {
     if (!response.ok) {
       const body = await response.text();
       console.error("Failed to send inquiry notification email", response.status, body);
+      return false;
     }
+    return true;
   } catch (error) {
     console.error("Failed to send inquiry notification email", error);
+    return false;
   }
 }
 

@@ -113,27 +113,35 @@ export function checkRateLimit(ip: string) {
   rateLimitStore.set(ip, timestamps);
 }
 
-export async function saveInquiryRecord(
+export function createInquiryRecord(
   record: Omit<InquiryRecord, "id" | "submittedAt">
-) {
-  await fs.mkdir(DATA_DIR, { recursive: true });
-
-  let existing: InquiryRecord[] = [];
-  try {
-    const raw = await fs.readFile(DB_FILE, "utf-8");
-    existing = JSON.parse(raw);
-  } catch {
-    existing = [];
-  }
-
-  const full: InquiryRecord = {
+): InquiryRecord {
+  return {
     ...record,
     id: crypto.randomUUID(),
     submittedAt: new Date().toISOString(),
   };
+}
 
-  existing.push(full);
-  await fs.writeFile(DB_FILE, JSON.stringify(existing, null, 2), "utf-8");
+// Best effort: works locally, but hosts with a read-only filesystem (such as
+// Vercel) reject the write, so callers must not depend on it.
+export async function saveInquiryRecord(record: InquiryRecord) {
+  try {
+    await fs.mkdir(DATA_DIR, { recursive: true });
 
-  return full;
+    let existing: InquiryRecord[] = [];
+    try {
+      const raw = await fs.readFile(DB_FILE, "utf-8");
+      existing = JSON.parse(raw);
+    } catch {
+      existing = [];
+    }
+
+    existing.push(record);
+    await fs.writeFile(DB_FILE, JSON.stringify(existing, null, 2), "utf-8");
+    return true;
+  } catch (error) {
+    console.warn("Could not save inquiry to disk", error);
+    return false;
+  }
 }
