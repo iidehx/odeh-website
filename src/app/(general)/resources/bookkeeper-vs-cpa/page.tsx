@@ -52,7 +52,7 @@ const comparison = [
   { task: "License required", bookkeeper: "No", cpa: "Yes, from a state board" },
 ];
 
-const stages = [
+const stages: { situation: string; example: string; need: string; link?: { href: string; label: string } }[] = [
   {
     situation: "Just you, simple finances",
     example: "A newer real estate agent paid by commission",
@@ -72,6 +72,7 @@ const stages = [
     situation: "A big decision coming up",
     example: "Buying a practice, adding a location, or taking out a loan",
     need: "A CPA or fractional CFO to run the numbers before you commit.",
+    link: { href: "/resources/fractional-cfo", label: "What a fractional CFO does" },
   },
   {
     situation: "A letter from the IRS",
@@ -209,6 +210,13 @@ export default function BookkeeperVsCpaPage() {
                     <span className="font-semibold text-slate-900">What you need: </span>
                     {s.need}
                   </p>
+                  {s.link && (
+                    <p className="mt-2 text-sm">
+                      <Link href={s.link.href} className={linkClasses}>
+                        {s.link.label}
+                      </Link>
+                    </p>
+                  )}
                 </div>
               ))}
             </div>

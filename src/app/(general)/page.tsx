@@ -236,6 +236,12 @@ const resources: ResourceItem[] = [
     href: "/resources/bookkeeper-vs-cpa",
   },
   {
+    tag: "Guide",
+    title: "What Is a Fractional CFO, and When Do You Need One?",
+    description: "What it does, what it costs, and the signs you're ready.",
+    href: "/resources/fractional-cfo",
+  },
+  {
     tag: "Dental · Free Tool",
     title: "Dental Overhead Calculator",
     description: "Compare your clinic's overhead with typical dental benchmarks.",
@@ -260,10 +266,22 @@ const resources: ResourceItem[] = [
     href: "/therapy/resources/aba-cash-reserve-calculator",
   },
   {
+    tag: "Therapy · Guide",
+    title: "ABA Practice Bookkeeping: What an RBT Hour Really Costs",
+    description: "Payroll, supervision, and margin per billable hour, worked through.",
+    href: "/therapy/resources/aba-payroll-bookkeeping",
+  },
+  {
     tag: "Real Estate · Free Tool",
     title: "Real Estate Agent Tax Calculator",
     description: "How much of each commission check to set aside for taxes.",
     href: "/real-estate/resources/quarterly-tax-calculator",
+  },
+  {
+    tag: "Real Estate · Checklist",
+    title: "Real Estate Agent Tax Deductions Checklist",
+    description: "A printable 2026 checklist of deductions and the records to keep.",
+    href: "/real-estate/resources/tax-deductions-checklist",
   },
 ];
 

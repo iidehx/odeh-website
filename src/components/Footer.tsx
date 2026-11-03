@@ -11,7 +11,7 @@ export default function Footer({
   termsHref: string;
 }) {
   return (
-    <footer className="border-t border-slate-200 bg-slate-50">
+    <footer className="border-t border-slate-200 bg-slate-50 print:hidden">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-12 md:flex-row md:justify-between">
         <div className="max-w-sm">
           <div className="flex items-center gap-2 text-slate-900">

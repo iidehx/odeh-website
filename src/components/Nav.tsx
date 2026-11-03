@@ -23,7 +23,7 @@ export default function Nav({
   const { open, toggle, close } = useMobileMenu();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur print:hidden">
       <nav
         aria-label="Primary"
         className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"

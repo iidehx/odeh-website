@@ -256,6 +256,26 @@ export default function RealEstatePage() {
               <ChevronRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </span>
           </Link>
+          <Link
+            href="/real-estate/resources/tax-deductions-checklist"
+            className="group mt-4 flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-8 transition-shadow hover:shadow-md sm:flex-row sm:items-center sm:justify-between"
+          >
+            <span>
+              <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-amber-700">
+                Free Checklist
+              </span>
+              <span className="mt-2 block text-xl font-semibold text-slate-900">
+                Real estate agent tax deductions for 2026
+              </span>
+              <span className="mt-1 block text-sm text-slate-600">
+                A printable checklist of what you can deduct, and the records to keep.
+              </span>
+            </span>
+            <span className="flex flex-none items-center gap-1 text-sm font-semibold text-amber-700">
+              See the Checklist
+              <ChevronRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </span>
+          </Link>
         </div>
       </section>
       <Faq items={faqItems} />
