@@ -1,21 +1,25 @@
-import { NextRequest, NextResponse } from "next/server";
 import {
   ValidationError,
   checkHoneypotAndTiming,
   checkRateLimit,
   createInquiryRecord,
-  saveInquiryRecord,
   validateInquiryFields,
   type Category,
-} from "@/lib/inquiries";
-import { sendInquiryNotification } from "@/lib/email";
+} from "./inquiries";
+import { sendInquiryNotification, type EmailConfig } from "./email";
 
 const UNDELIVERED_MESSAGE =
   "We couldn't send your message. Please call 714-204-9779 or email info@omarodehcpa.com.";
 
-export async function handleContactSubmission(request: NextRequest, category: Category) {
+export async function handleContactSubmission(
+  request: Request,
+  category: Category,
+  config: EmailConfig
+) {
   const ip =
-    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+    request.headers.get("cf-connecting-ip") ||
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    "unknown";
 
   try {
     checkRateLimit(ip);
@@ -26,30 +30,22 @@ export async function handleContactSubmission(request: NextRequest, category: Ca
     const fields = validateInquiryFields(formData);
     const record = createInquiryRecord({ category, ...fields, ip });
 
-    const [saved, emailed] = await Promise.all([
-      saveInquiryRecord(record),
-      sendInquiryNotification(record),
-    ]);
-
-    // Only report success if the inquiry actually reached someone.
-    if (!saved && !emailed) {
-      console.error(`${category} inquiry ${record.id} was neither saved nor emailed`);
-      return NextResponse.json(
-        { success: false, message: UNDELIVERED_MESSAGE },
-        { status: 503 }
-      );
+    // There is no database, so an inquiry only reaches anyone by email.
+    if (!(await sendInquiryNotification(record, config))) {
+      console.error(`${category} inquiry ${record.id} could not be emailed`);
+      return Response.json({ success: false, message: UNDELIVERED_MESSAGE }, { status: 503 });
     }
 
-    return NextResponse.json({ success: true, id: record.id }, { status: 201 });
+    return Response.json({ success: true, id: record.id }, { status: 201 });
   } catch (error) {
     if (error instanceof ValidationError) {
-      return NextResponse.json(
+      return Response.json(
         { success: false, field: error.field, message: error.message },
         { status: 400 }
       );
     }
     console.error(`${category} contact submission failed`, error);
-    return NextResponse.json(
+    return Response.json(
       { success: false, message: "Something went wrong. Please try again." },
       { status: 500 }
     );
