@@ -10,6 +10,8 @@ const SERVICES = [
   "Financial Consulting",
   "Cash Flow Management",
   "Tax Preparation",
+  "Payroll",
+  "Fractional CFO",
   "Business Management",
   "Other",
 ];
@@ -86,7 +88,7 @@ export default function ContactForm({
       </div>
 
       {status === "error" && serverMessage && (
-        <div className="flex items-start gap-2 rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+        <div role="alert" className="flex items-start gap-2 rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
           <AlertCircleIcon className="mt-0.5 h-4 w-4 flex-none" />
           <span>{serverMessage}</span>
         </div>
