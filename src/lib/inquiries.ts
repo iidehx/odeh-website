@@ -1,7 +1,3 @@
-import { promises as fs } from "fs";
-import path from "path";
-import crypto from "crypto";
-
 export type Category = "dental" | "therapy" | "real-estate";
 
 export interface InquiryRecord {
@@ -16,9 +12,6 @@ export interface InquiryRecord {
   submittedAt: string;
   ip: string;
 }
-
-const DATA_DIR = path.join(process.cwd(), "data");
-const DB_FILE = path.join(DATA_DIR, "inquiries.json");
 
 export class ValidationError extends Error {
   field: string;
@@ -118,30 +111,7 @@ export function createInquiryRecord(
 ): InquiryRecord {
   return {
     ...record,
-    id: crypto.randomUUID(),
+    id: globalThis.crypto.randomUUID(),
     submittedAt: new Date().toISOString(),
   };
-}
-
-// Best effort: works locally, but hosts with a read-only filesystem (such as
-// Vercel) reject the write, so callers must not depend on it.
-export async function saveInquiryRecord(record: InquiryRecord) {
-  try {
-    await fs.mkdir(DATA_DIR, { recursive: true });
-
-    let existing: InquiryRecord[] = [];
-    try {
-      const raw = await fs.readFile(DB_FILE, "utf-8");
-      existing = JSON.parse(raw);
-    } catch {
-      existing = [];
-    }
-
-    existing.push(record);
-    await fs.writeFile(DB_FILE, JSON.stringify(existing, null, 2), "utf-8");
-    return true;
-  } catch (error) {
-    console.warn("Could not save inquiry to disk", error);
-    return false;
-  }
 }

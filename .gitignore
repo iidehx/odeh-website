@@ -34,12 +34,9 @@ yarn-error.log*
 .env*
 !.env.example
 
-# vercel
-.vercel
-
-# application data (local file-based storage for submitted contact inquiries)
-/data/*
-!/data/.gitkeep
+# cloudflare
+.wrangler/
+.dev.vars*
 
 # typescript
 *.tsbuildinfo

@@ -1,7 +1,13 @@
 import type { InquiryRecord } from "./inquiries";
 
-const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "Odeh90@gmail.com";
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "Omar Odeh CPA Website <onboarding@resend.dev>";
+const DEFAULT_NOTIFY_EMAIL = "Odeh90@gmail.com";
+const DEFAULT_FROM_EMAIL = "Omar Odeh CPA Website <onboarding@resend.dev>";
+
+export interface EmailConfig {
+  RESEND_API_KEY?: string;
+  NOTIFY_EMAIL?: string;
+  RESEND_FROM_EMAIL?: string;
+}
 
 const CATEGORY_LABELS: Record<InquiryRecord["category"], string> = {
   dental: "Dental Clinic",
@@ -9,8 +15,8 @@ const CATEGORY_LABELS: Record<InquiryRecord["category"], string> = {
   "real-estate": "Real Estate",
 };
 
-export async function sendInquiryNotification(record: InquiryRecord) {
-  const apiKey = process.env.RESEND_API_KEY;
+export async function sendInquiryNotification(record: InquiryRecord, config: EmailConfig) {
+  const apiKey = config.RESEND_API_KEY;
   if (!apiKey) {
     console.warn("RESEND_API_KEY is not set — skipping email notification.");
     return false;
@@ -39,8 +45,8 @@ export async function sendInquiryNotification(record: InquiryRecord) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: FROM_EMAIL,
-        to: [NOTIFY_EMAIL],
+        from: config.RESEND_FROM_EMAIL || DEFAULT_FROM_EMAIL,
+        to: [config.NOTIFY_EMAIL || DEFAULT_NOTIFY_EMAIL],
         reply_to: record.email,
         subject: `New ${categoryLabel} inquiry from ${record.fullName}`,
         html,
