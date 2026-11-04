@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy | Omar Odeh, CPA",
   description: "How Omar Odeh, CPA collects, uses, and protects your information.",
-  alternates: { canonical: "/therapy/privacy" },
+  alternates: { canonical: "/privacy" },
   robots: { index: true, follow: true },
 };
 
@@ -59,10 +59,10 @@ export default function TherapyPrivacyPage() {
               If you have questions about this policy or would like your
               information removed, contact us at{" "}
               <a
-                href="mailto:Odeh90@gmail.com"
+                href="mailto:info@omarodehcpa.com"
                 className="text-amber-700 hover:underline"
               >
-                Odeh90@gmail.com
+                info@omarodehcpa.com
               </a>
               .
             </p>

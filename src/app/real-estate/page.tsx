@@ -1,13 +1,17 @@
+import Link from "next/link";
 import Hero from "@/components/Hero";
 import HeroGraphic from "@/components/HeroGraphic";
 import Services, { type ServiceItem } from "@/components/Services";
 import Process, { type ProcessStep } from "@/components/Process";
 import WhyUs, { type WhyUsPoint } from "@/components/WhyUs";
+import Faq, { type FaqItem } from "@/components/Faq";
 import CtaSection from "@/components/CtaSection";
 import {
   ActivityIcon,
   CalculatorIcon,
+  ChevronRightIcon,
   ClipboardCheckIcon,
+  CompassIcon,
   FileTextIcon,
   HandshakeIcon,
   MessageCircleIcon,
@@ -15,6 +19,7 @@ import {
   ReceiptIcon,
   ShieldCheckIcon,
   TrendingUpIcon,
+  UsersIcon,
 } from "@/components/icons";
 
 const services: ServiceItem[] = [
@@ -22,37 +27,94 @@ const services: ServiceItem[] = [
     icon: CalculatorIcon,
     title: "Bookkeeping",
     description:
-      "Day-to-day tracking of commissions, listing expenses, and closing costs, so your books stay accurate deal by deal.",
+      "Day-to-day tracking of commissions, listing expenses, and closing costs, so you have accurate financials whenever you need them.",
+    details:
+      "We reconcile your commission deposits and closing costs against your statements on a regular schedule, categorize marketing and listing expenses correctly, and keep your books audit-ready year-round. We work inside whatever accounting software you already use.",
+    relatedLinks: [
+      { label: "QuickBooks", href: "https://quickbooks.intuit.com/" },
+      { label: "Xero", href: "https://www.xero.com/" },
+      { label: "Digits", href: "https://digits.com/" },
+    ],
   },
   {
     icon: PieChartIcon,
     title: "Budgeting",
     description:
       "Budgets built around irregular, commission-based income and marketing spend, not generic templates.",
+    details:
+      "We build your budget around real, irregular commission income rather than a steady paycheck assumption, so marketing spend and personal draws are planned around your actual deal cycle.",
+    relatedLinks: [
+      { label: "SBA Business Guide", href: "https://www.sba.gov/business-guide" },
+    ],
   },
   {
     icon: HandshakeIcon,
     title: "Financial Consulting",
     description:
-      "Guidance on entity structure, 1099 income planning, and growth decisions, from someone who understands real estate income cycles.",
+      "Guidance on entity structure, 1099 income planning, and growth decisions — business analysis, where to grow, and how to source funding — from someone who understands real estate income cycles.",
+    details:
+      "Considering forming an entity, growing your team, or expanding into a new market? We walk through the numbers with you first, so the decision is grounded in what your business can actually support.",
+    relatedLinks: [
+      { label: "SBA: Fund Your Business", href: "https://www.sba.gov/business-guide" },
+      { label: "SCORE Business Mentoring", href: "https://www.score.org/" },
+    ],
   },
   {
     icon: TrendingUpIcon,
     title: "Cash Flow Management",
     description:
       "Visibility into deal-based, inconsistent income so you can plan through slow months without cash flow surprises.",
+    details:
+      "We track your deal pipeline against your fixed costs, so you can see a slow month coming and plan around it instead of being surprised by it.",
+    relatedLinks: [
+      { label: "SBA Business Guide", href: "https://www.sba.gov/business-guide" },
+    ],
   },
   {
     icon: ReceiptIcon,
     title: "Tax Preparation",
     description:
-      "Accurate, timely tax filing that accounts for 1099 income, mileage, and real estate-specific deductions.",
+      "Maximizing every deduction available to you — mileage, marketing, 1099 income — and making sure you pay exactly what you truly owe.",
+    details:
+      "We review a full year of your books for every available deduction — mileage, marketing, home office, 1099 income planning — and file accurately and on time.",
+    relatedLinks: [
+      {
+        label: "IRS Small Business & Self-Employed Tax Center",
+        href: "https://www.irs.gov/businesses/small-businesses-self-employed",
+      },
+    ],
+  },
+  {
+    icon: UsersIcon,
+    title: "Payroll",
+    description:
+      "Processing payroll accurately and on time for your support staff and team, every pay period without fail.",
+    details:
+      "If you employ support staff or a team, we handle the full payroll cycle — withholdings, payroll tax deposits — so everyone is paid correctly and on time, every pay period.",
+    relatedLinks: [
+      {
+        label: "IRS Employment Taxes",
+        href: "https://www.irs.gov/businesses/small-businesses-self-employed/employment-taxes",
+      },
+      { label: "DOL Wage and Hour Division", href: "https://www.dol.gov/agencies/whd" },
+    ],
+  },
+  {
+    icon: CompassIcon,
+    title: "Fractional CFO",
+    description:
+      "High-level financial strategy and leadership for your business, without the cost of a full-time hire — guidance on scaling your team and growing your deal volume.",
+    details:
+      "Get strategic financial leadership for your business — forecasting, scaling your team, growing deal volume — without the overhead of a full-time CFO on staff.",
+    relatedLinks: [{ label: "SCORE Business Mentoring", href: "https://www.score.org/" }],
   },
   {
     icon: ActivityIcon,
     title: "Business Management",
     description:
       "Deal pipeline, marketing spend, and commission-split metrics tracked and reported clearly.",
+    details:
+      "We track the metrics that actually reflect how your business is performing — deal pipeline, marketing ROI, commission splits — and report on them clearly so you always know where you stand.",
   },
 ];
 
@@ -110,13 +172,44 @@ const points: WhyUsPoint[] = [
   },
 ];
 
+const faqItems: FaqItem[] = [
+  {
+    question: "I'm a solo agent — is this still for me?",
+    answer:
+      "Yes. Whether you're a solo agent or run a team, we tailor our services to how you actually earn.",
+  },
+  {
+    question: "How do you handle inconsistent, commission-based income?",
+    answer:
+      "That's the core of our cash flow and budgeting work — planning around the slow months, not just the good ones.",
+  },
+  {
+    question: "Do you handle 1099 tax planning?",
+    answer: "Yes, including mileage, marketing, and other real estate-specific deductions.",
+  },
+  {
+    question: "Can you help me decide whether to grow my team?",
+    answer: "Yes, that's a common financial consulting and fractional CFO conversation.",
+  },
+  {
+    question: "Do you work with agents and brokers outside California?",
+    answer:
+      "Yes. We work fully online with real estate professionals anywhere in the US. Meetings happen by phone or video call, so you never need to be local.",
+  },
+  {
+    question: "How do I get started?",
+    answer:
+      "Reach out through the contact form — tell us a bit about your business and we'll follow up to see how we can help.",
+  },
+];
+
 export default function RealEstatePage() {
   return (
     <>
       <Hero
         label="Accounting for Real Estate"
-        headline="Financial Clarity for Your Real Estate Business."
-        description="Omar Odeh, CPA helps real estate agents, brokers, and real estate businesses stay organized and in control of their finances with bookkeeping, budgeting, cash flow management, and business management built around how real estate income actually works."
+        headline="Real Estate CPA and Bookkeeping for Agents and Brokers."
+        description="Omar Odeh, CPA helps real estate agents, brokers, and real estate businesses anywhere in the US stay organized and in control of their finances with bookkeeping, budgeting, cash flow management, and business management built around how real estate income actually works. Everything is handled online, so your location doesn't matter."
         primaryCtaHref="/real-estate/contact"
         primaryCtaLabel="Contact Us"
         secondaryCtaHref="#services"
@@ -141,6 +234,51 @@ export default function RealEstatePage() {
         description="Real estate income doesn't arrive on a steady schedule. Omar Odeh, CPA works with you throughout the year so your books stay accurate and your decisions stay informed, deal or no deal."
         points={points}
       />
+      <section className="bg-white pb-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <Link
+            href="/real-estate/resources/quarterly-tax-calculator"
+            className="group flex flex-col gap-4 rounded-2xl border border-amber-200 bg-amber-50 p-8 transition-shadow hover:shadow-md sm:flex-row sm:items-center sm:justify-between"
+          >
+            <span>
+              <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-amber-700">
+                Free Tool
+              </span>
+              <span className="mt-2 block text-xl font-semibold text-slate-900">
+                How much of each commission check should you set aside for taxes?
+              </span>
+              <span className="mt-1 block text-sm text-slate-600">
+                Get your own percentage and the 2026 quarterly deadlines in about a minute.
+              </span>
+            </span>
+            <span className="flex flex-none items-center gap-1 text-sm font-semibold text-amber-700">
+              Try the Agent Tax Calculator
+              <ChevronRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </span>
+          </Link>
+          <Link
+            href="/real-estate/resources/tax-deductions-checklist"
+            className="group mt-4 flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-8 transition-shadow hover:shadow-md sm:flex-row sm:items-center sm:justify-between"
+          >
+            <span>
+              <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-amber-700">
+                Free Checklist
+              </span>
+              <span className="mt-2 block text-xl font-semibold text-slate-900">
+                Real estate agent tax deductions for 2026
+              </span>
+              <span className="mt-1 block text-sm text-slate-600">
+                A printable checklist of what you can deduct, and the records to keep.
+              </span>
+            </span>
+            <span className="flex flex-none items-center gap-1 text-sm font-semibold text-amber-700">
+              See the Checklist
+              <ChevronRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </span>
+          </Link>
+        </div>
+      </section>
+      <Faq items={faqItems} />
       <CtaSection
         heading="Ready to Get Your Business's Books in Order?"
         description="Reach out and tell us about your business — we'll follow up to see how we can help."
