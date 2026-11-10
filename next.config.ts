@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Build to static files in ./out, served by the Cloudflare Worker in ./worker.
+  output: "export",
 };
 
 export default nextConfig;

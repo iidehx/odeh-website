@@ -1,7 +1,3 @@
-import { promises as fs } from "fs";
-import path from "path";
-import crypto from "crypto";
-
 export type Category = "dental" | "therapy" | "real-estate";
 
 export interface InquiryRecord {
@@ -16,9 +12,6 @@ export interface InquiryRecord {
   submittedAt: string;
   ip: string;
 }
-
-const DATA_DIR = path.join(process.cwd(), "data");
-const DB_FILE = path.join(DATA_DIR, "inquiries.json");
 
 export class ValidationError extends Error {
   field: string;
@@ -38,6 +31,8 @@ const SERVICES = new Set([
   "Financial Consulting",
   "Cash Flow Management",
   "Tax Preparation",
+  "Payroll",
+  "Fractional CFO",
   "Business Management",
   "Other",
 ]);
@@ -111,27 +106,12 @@ export function checkRateLimit(ip: string) {
   rateLimitStore.set(ip, timestamps);
 }
 
-export async function saveInquiryRecord(
+export function createInquiryRecord(
   record: Omit<InquiryRecord, "id" | "submittedAt">
-) {
-  await fs.mkdir(DATA_DIR, { recursive: true });
-
-  let existing: InquiryRecord[] = [];
-  try {
-    const raw = await fs.readFile(DB_FILE, "utf-8");
-    existing = JSON.parse(raw);
-  } catch {
-    existing = [];
-  }
-
-  const full: InquiryRecord = {
+): InquiryRecord {
+  return {
     ...record,
-    id: crypto.randomUUID(),
+    id: globalThis.crypto.randomUUID(),
     submittedAt: new Date().toISOString(),
   };
-
-  existing.push(full);
-  await fs.writeFile(DB_FILE, JSON.stringify(existing, null, 2), "utf-8");
-
-  return full;
 }
