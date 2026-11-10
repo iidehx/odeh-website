@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "omarodehcpa",
+  "name": "odeh-website",
   "main": "worker/index.ts",
   "compatibility_date": "2026-11-01",
   "assets": {
@@ -13,5 +13,10 @@
     // only the contact form API runs the Worker.
     "run_worker_first": ["/api/*"]
   },
-  "observability": { "enabled": true }
+  "observability": { "enabled": true },
+  // Where contact form inquiries are emailed. RESEND_API_KEY is a secret set
+  // in the Cloudflare dashboard, never in this file.
+  "vars": {
+    "NOTIFY_EMAIL": "Admin@omarodehcpa.com"
+  }
 }
