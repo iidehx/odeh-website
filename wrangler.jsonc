@@ -17,6 +17,6 @@
   // Where contact form inquiries are emailed. RESEND_API_KEY is a secret set
   // in the Cloudflare dashboard, never in this file.
   "vars": {
-    "NOTIFY_EMAIL": "Admin@omarodehcpa.com"
+    "NOTIFY_EMAIL": "admin@omarodehcpa.com"
   }
 }
