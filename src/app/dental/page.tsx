@@ -1,13 +1,17 @@
+import Link from "next/link";
 import Hero from "@/components/Hero";
 import HeroGraphic from "@/components/HeroGraphic";
 import Services, { type ServiceItem } from "@/components/Services";
 import Process, { type ProcessStep } from "@/components/Process";
 import WhyUs, { type WhyUsPoint } from "@/components/WhyUs";
+import Faq, { type FaqItem } from "@/components/Faq";
 import CtaSection from "@/components/CtaSection";
 import {
   ActivityIcon,
   CalculatorIcon,
+  ChevronRightIcon,
   ClipboardCheckIcon,
+  CompassIcon,
   FileTextIcon,
   HandshakeIcon,
   MessageCircleIcon,
@@ -15,6 +19,7 @@ import {
   ReceiptIcon,
   ShieldCheckIcon,
   TrendingUpIcon,
+  UsersIcon,
 } from "@/components/icons";
 
 const services: ServiceItem[] = [
@@ -22,37 +27,94 @@ const services: ServiceItem[] = [
     icon: CalculatorIcon,
     title: "Bookkeeping",
     description:
-      "Day-to-day tracking of production, collections, and expenses across your clinic, so your books always match your chairside reality.",
+      "Day-to-day tracking of production, collections, and expenses across your clinic, so your books always match your chairside reality and you have accurate financials whenever you need them.",
+    details:
+      "We reconcile your production and collections against your bank deposits on a regular schedule, categorize supply and lab expenses correctly, and keep your clinic's books audit-ready year-round. We work inside whatever practice management and accounting software you already use.",
+    relatedLinks: [
+      { label: "QuickBooks", href: "https://quickbooks.intuit.com/" },
+      { label: "Xero", href: "https://www.xero.com/" },
+      { label: "Digits", href: "https://digits.com/" },
+    ],
   },
   {
     icon: PieChartIcon,
     title: "Budgeting",
     description:
       "Budgets built around your clinic's real overhead — supplies, lab fees, staff, and equipment — not generic templates.",
+    details:
+      "We build your budget from your clinic's actual spending history — supplies, lab fees, equipment leases, staff — so you can plan a new hire, a renovation, or new equipment with real numbers behind the decision.",
+    relatedLinks: [
+      { label: "SBA Business Guide", href: "https://www.sba.gov/business-guide" },
+    ],
   },
   {
     icon: HandshakeIcon,
     title: "Financial Consulting",
     description:
-      "Guidance on associate buy-ins, equipment purchases, and growth decisions, from someone who understands dental clinic economics.",
+      "Guidance on associate buy-ins, equipment purchases, and growth decisions — business analysis, where to grow, and how to source funding — from someone who understands dental clinic economics.",
+    details:
+      "Considering an associate buy-in, a second location, or major equipment financing? We walk through the numbers with you first, so the decision is grounded in what your clinic can actually support.",
+    relatedLinks: [
+      { label: "SBA: Fund Your Business", href: "https://www.sba.gov/business-guide" },
+      { label: "SCORE Business Mentoring", href: "https://www.score.org/" },
+    ],
   },
   {
     icon: TrendingUpIcon,
     title: "Cash Flow Management",
     description:
       "Visibility into production versus collections and insurance reimbursement timing, so cash flow gaps don't catch you off guard.",
+    details:
+      "We track the gap between what you produce and what actually gets collected, including insurance reimbursement timing, so a slow reimbursement month doesn't catch your clinic off guard.",
+    relatedLinks: [
+      { label: "SBA Business Guide", href: "https://www.sba.gov/business-guide" },
+    ],
   },
   {
     icon: ReceiptIcon,
     title: "Tax Preparation",
     description:
-      "Accurate, timely tax filing that accounts for equipment depreciation, entity structure, and dental-specific deductions.",
+      "Maximizing every deduction available to your clinic — equipment, supplies, lab fees — and making sure you pay exactly what you truly owe.",
+    details:
+      "We review a full year of your clinic's books for every available deduction — equipment depreciation, supplies, lab fees, entity structure — and file accurately and on time.",
+    relatedLinks: [
+      {
+        label: "IRS Small Business & Self-Employed Tax Center",
+        href: "https://www.irs.gov/businesses/small-businesses-self-employed",
+      },
+    ],
+  },
+  {
+    icon: UsersIcon,
+    title: "Payroll",
+    description:
+      "Processing payroll accurately and on time for your hygienists, assistants, and front desk staff, every pay period without fail.",
+    details:
+      "We handle the full payroll cycle for your clinic's team — hygienists, assistants, front desk — including withholdings and payroll tax deposits, so everyone is paid correctly, on time, every period.",
+    relatedLinks: [
+      {
+        label: "IRS Employment Taxes",
+        href: "https://www.irs.gov/businesses/small-businesses-self-employed/employment-taxes",
+      },
+      { label: "DOL Wage and Hour Division", href: "https://www.dol.gov/agencies/whd" },
+    ],
+  },
+  {
+    icon: CompassIcon,
+    title: "Fractional CFO",
+    description:
+      "High-level financial strategy and leadership for your clinic, without the cost of a full-time hire — guidance on expansion, equipment financing, and big decisions.",
+    details:
+      "Get strategic financial leadership for your clinic — forecasting, expansion planning, equipment financing decisions — without the overhead of a full-time CFO on staff.",
+    relatedLinks: [{ label: "SCORE Business Mentoring", href: "https://www.score.org/" }],
   },
   {
     icon: ActivityIcon,
     title: "Business Management",
     description:
       "Chair utilization, hygiene production, overhead ratios, and other clinic-level metrics tracked and reported clearly.",
+    details:
+      "We track the metrics that actually reflect how your clinic is performing — chair utilization, hygiene production, overhead as a percentage of collections — and report on them clearly so you always know where you stand.",
   },
 ];
 
@@ -110,13 +172,45 @@ const points: WhyUsPoint[] = [
   },
 ];
 
+const faqItems: FaqItem[] = [
+  {
+    question: "Do I need to switch practice management software?",
+    answer:
+      "No. We work with the systems your clinic already uses and pull the numbers we need from there.",
+  },
+  {
+    question: "What if my clinic's books are a mess or out of date?",
+    answer:
+      "That's common, and we can help bring them current before moving forward with ongoing bookkeeping.",
+  },
+  {
+    question: "Do you work with multi-location practices?",
+    answer:
+      "Yes, we can track and report on each location separately or combined, whichever is more useful to you.",
+  },
+  {
+    question: "Can you help with associate buy-ins or partnership decisions?",
+    answer: "Yes, that falls under our financial consulting and fractional CFO services.",
+  },
+  {
+    question: "Do you work with dental clinics outside California?",
+    answer:
+      "Yes. We work fully online with dental clinics anywhere in the US. Meetings happen by phone or video call, so your clinic never needs to be local.",
+  },
+  {
+    question: "How do I get started?",
+    answer:
+      "Reach out through the contact form — tell us a bit about your clinic and we'll follow up to see how we can help.",
+  },
+];
+
 export default function DentalPage() {
   return (
     <>
       <Hero
         label="Accounting for Dental Clinics"
-        headline="Financial Clarity for Your Dental Clinic."
-        description="Omar Odeh, CPA helps dental clinics stay organized and in control of their finances with bookkeeping, budgeting, cash flow management, and business management built around how a dental office actually runs."
+        headline="Dental CPA and Bookkeeping for Your Clinic."
+        description="Omar Odeh, CPA helps dental clinics anywhere in the US stay organized and in control of their finances with bookkeeping, budgeting, cash flow management, and business management built around how a dental office actually runs. Everything is handled online, so your location doesn't matter."
         primaryCtaHref="/dental/contact"
         primaryCtaLabel="Contact Us"
         secondaryCtaHref="#services"
@@ -141,6 +235,71 @@ export default function DentalPage() {
         description="Dental clinics deserve more than a once-a-year tax appointment. Omar Odeh, CPA works with you throughout the year so your books stay accurate and your decisions stay informed."
         points={points}
       />
+      <section className="bg-white pb-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <Link
+            href="/dental/resources/dental-overhead-calculator"
+            className="group flex flex-col gap-4 rounded-2xl border border-amber-200 bg-amber-50 p-8 transition-shadow hover:shadow-md sm:flex-row sm:items-center sm:justify-between"
+          >
+            <span>
+              <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-amber-700">
+                Free Tool
+              </span>
+              <span className="mt-2 block text-xl font-semibold text-slate-900">
+                Is your clinic&apos;s overhead too high?
+              </span>
+              <span className="mt-1 block text-sm text-slate-600">
+                Compare your overhead with typical dental benchmarks in about a minute.
+              </span>
+            </span>
+            <span className="flex flex-none items-center gap-1 text-sm font-semibold text-amber-700">
+              Try the Dental Overhead Calculator
+              <ChevronRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </span>
+          </Link>
+          <Link
+            href="/dental/resources/dental-cpa-cost"
+            className="group mt-4 flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-8 transition-shadow hover:shadow-md sm:flex-row sm:items-center sm:justify-between"
+          >
+            <span>
+              <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-amber-700">
+                Pricing Guide
+              </span>
+              <span className="mt-2 block text-xl font-semibold text-slate-900">
+                How much does a dental CPA cost?
+              </span>
+              <span className="mt-1 block text-sm text-slate-600">
+                2026 price ranges by service and clinic size, and what&apos;s usually included.
+              </span>
+            </span>
+            <span className="flex flex-none items-center gap-1 text-sm font-semibold text-amber-700">
+              Read the Guide
+              <ChevronRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </span>
+          </Link>
+          <Link
+            href="/dental/resources/production-vs-collections"
+            className="group mt-4 flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-8 transition-shadow hover:shadow-md sm:flex-row sm:items-center sm:justify-between"
+          >
+            <span>
+              <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-amber-700">
+                Plain-English Guide
+              </span>
+              <span className="mt-2 block text-xl font-semibold text-slate-900">
+                Production vs. collections, explained
+              </span>
+              <span className="mt-1 block text-sm text-slate-600">
+                One clinic&apos;s month worked through, from production to profit.
+              </span>
+            </span>
+            <span className="flex flex-none items-center gap-1 text-sm font-semibold text-amber-700">
+              Read the Guide
+              <ChevronRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </span>
+          </Link>
+        </div>
+      </section>
+      <Faq items={faqItems} />
       <CtaSection
         heading="Ready to Get Your Clinic's Books in Order?"
         description="Reach out and tell us about your clinic — we'll follow up to see how we can help."

@@ -36,6 +36,25 @@ export function HomeIcon({ className }: IconProps) {
   );
 }
 
+export function UsersIcon({ className }: IconProps) {
+  return (
+    <svg className={className} {...base} aria-hidden="true">
+      <circle cx="9" cy="8" r="3.25" />
+      <path d="M3.5 19.5v-1.5A4 4 0 0 1 7.5 14h3a4 4 0 0 1 4 4v1.5" />
+      <path d="M15.5 6.8a3 3 0 0 1 0 5.9M20.5 19.5v-1.5a4 4 0 0 0-2.9-3.85" />
+    </svg>
+  );
+}
+
+export function CompassIcon({ className }: IconProps) {
+  return (
+    <svg className={className} {...base} aria-hidden="true">
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="m15 9-4.5 1.5L9 15l4.5-1.5Z" />
+    </svg>
+  );
+}
+
 export function CalculatorIcon({ className }: IconProps) {
   return (
     <svg className={className} {...base} aria-hidden="true">
